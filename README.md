@@ -49,7 +49,7 @@ Click Here to see  👉[My Portfolio](https://Sasa-abu-irmeileh-portfolio.netlif
 For any inquiries, you can reach Sasa Dhungana through the following channels:
 
 - Email: [Sasadhungana510@gmail.com](mailto:Sasadhungana510@gmail.com)
-- GitHub: [SasaDhungana(https://github.com/SasaDhungana)
+- GitHub: [SasaDhungana](https://github.com/SasaDhungana)
 - LinkedIn: [Sasa Dhungana](https://www.linkedin.com/in/Sasadhungana)
 - Medium: [SasaDhungana](https://medium.com/@SasaDhungana)
 
