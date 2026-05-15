@@ -1,5 +1,5 @@
 var typed = new Typed('.typing', {
-    strings: ["UI/UX" ],
+    strings: ["Product Designer", "UI/UX Designer", "UX Researcher"],
     typeSpeed: 110,
     BackSpeed: 60,
     loop: true
