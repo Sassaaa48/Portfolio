@@ -51,6 +51,6 @@ For any inquiries, you can reach Sasa Dhungana through the following channels:
 - Email: [Sasadhungana510@gmail.com](mailto:Sasadhungana510@gmail.com)
 - GitHub: [Sassaaa48](https://github.com/Sassaaa48)
 - LinkedIn: [Sasa Dhungana](https://www.linkedin.com/in/sasa-dhungana-2b0a12283/)
-- Medium: [SasaDhungana](https://medium.com/@sasadhungana510)
+- Medium: [SasaDhungana](https://medium.com/@SasaDhungana)
 
 Feel free to fork this repository, raise issues, or submit pull requests. Thank you for visiting! 🔥
