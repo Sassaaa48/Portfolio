@@ -501,6 +501,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-secondary);
 }
 
+.hero-title-large .hero-subtitle {
+    font-size: clamp(28px, 4.2vw, 52px);
+}
+
 .hero-statement {
     font-size: clamp(18px, 2.5vw, 24px);
     font-weight: 500;
@@ -2629,4 +2633,37 @@ body.blueprint-mode .wireframe-mode-btn {
 /* Utilities */
 .text-accent {
     color: var(--skin-color);
+}
+
+/* Skip to Figma Link styles */
+.skip-figma-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.skip-figma-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-color-hover);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-sans);
+}
+
+.skip-figma-btn:hover {
+    background-color: var(--skin-color);
+    border-color: var(--skin-color);
+    color: #ffffff;
+    transform: translateY(-2px);
 }

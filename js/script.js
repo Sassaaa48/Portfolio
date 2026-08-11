@@ -1802,6 +1802,7 @@ const caseStudiesData = {
         meta: 'AI Legal Research Platform',
         image: 'images/p6.png',
         brief: 'An advanced search and review interface utilizing a custom Retrieval-Augmented Generation (RAG) model trained on complex Nepali statutory laws.',
+        figmaLink: 'https://www.figma.com/',
         sections: [
             {
                 title: '01 — OVERVIEW',
@@ -1840,6 +1841,7 @@ const caseStudiesData = {
         meta: 'High-Definition Wallpaper Application',
         image: 'images/p4.png',
         brief: 'A visually intensive, image-heavy mobile platform optimized for high-definition wallpapers, tactile micro-interactions, and swift saving workflows.',
+        figmaLink: 'https://www.figma.com/',
         sections: [
             {
                 title: '01 — OVERVIEW',
@@ -1881,6 +1883,7 @@ const caseStudiesData = {
         meta: 'AI-Powered E-Learning Platform',
         image: 'images/p1.png',
         brief: 'An e-learning environment built with complex analytical dashboard layouts to present course performance metrics and learner trends simply.',
+        figmaLink: 'https://www.figma.com/',
         sections: [
             {
                 title: '01 — OVERVIEW',
@@ -2559,14 +2562,31 @@ window.openCaseStudy = function(projectId) {
 
             ${sectionsHtml}
 
+            <!-- Figma Link Integration Box -->
+            <div class="sajilo-figma-box" style="border: 1px solid var(--border-color); background-color: var(--bg-surface); color: var(--text-primary); margin-top: 60px;">
+                <div class="sajilo-figma-info">
+                    <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 6px;">Open Figma Canvas Workspace</h4>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Inspect complete page structures, layouts, design patterns, and responsive components.</p>
+                </div>
+                <a href="${project.figmaLink || 'https://www.figma.com/'}" target="_blank" class="sajilo-figma-btn">
+                    <i class="fa-brands fa-figma"></i> Open Figma File
+                </a>
+            </div>
+
             <div style="text-align: center; margin-top: 80px;">
                 <button onclick="closeCaseStudy()" class="btn btn-primary">Back to Portfolio <i class="fa-solid fa-arrow-left"></i></button>
             </div>
         `;
     }
 
-    // Render & Open with transitions
-    contentArea.innerHTML = fullHtml;
+    // Render & Open with transitions with prepend Skip to Figma button
+    contentArea.innerHTML = `
+        <div class="skip-figma-container">
+            <button class="skip-figma-btn" onclick="skipToFigma()">
+                <i class="fa-brands fa-figma"></i> Skip to Figma Link <i class="fa-solid fa-arrow-down"></i>
+            </button>
+        </div>
+    ` + fullHtml;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
@@ -2579,6 +2599,14 @@ window.closeCaseStudy = function() {
     modal.classList.remove('open');
     modal.classList.remove('sajilo-modal-mode');
     document.body.style.overflow = '';
+};
+
+window.skipToFigma = function() {
+    const modal = document.getElementById('case-study-modal');
+    const figmaBox = modal.querySelector('.sajilo-figma-box');
+    if (figmaBox) {
+        figmaBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 };
 
 // --- CONTACT FORM ACTION ---
