@@ -1580,7 +1580,7 @@ textarea.form-input {
     color: var(--text-muted);
 }
 
-/* Tasteful Custom Cursor Styles */
+/* Premium Star Trail Custom Cursor Styles */
 @media (pointer: fine) {
     body.custom-cursor-enabled {
         cursor: none;
@@ -1592,87 +1592,101 @@ textarea.form-input {
     body.custom-cursor-enabled .project-image-wrapper,
     body.custom-cursor-enabled input,
     body.custom-cursor-enabled textarea,
+    body.custom-cursor-enabled .day-night-toggle,
+    body.custom-cursor-enabled .nav-toggle-btn,
+    body.custom-cursor-enabled .style-switcher span,
     body.custom-cursor-enabled .interactive-keyword {
-        cursor: none;
+        cursor: none !important;
     }
 
-    .custom-cursor-dot {
+    .star-cursor {
         position: fixed;
         top: 0;
         left: 0;
-        width: 8px;
-        height: 8px;
-        background-color: var(--skin-color);
-        border-radius: 50%;
+        font-size: 18px;
+        line-height: 1;
+        color: var(--skin-color);
         pointer-events: none;
         z-index: 10000;
-        transform: translate(-50%, -50%);
-        transition: width 0.2s ease, height 0.2s ease;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transform-origin: center center;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px var(--skin-color);
+        transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                    font-size 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                    color 0.2s ease;
+        display: block;
     }
 
-    .custom-cursor-circle {
+    .star-cursor.hovered {
+        font-size: 26px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        color: var(--skin-color);
+    }
+
+    .star-cursor-ring {
         position: fixed;
         top: 0;
         left: 0;
-        width: 36px;
-        height: 36px;
-        border: 1.5px solid var(--skin-color);
+        width: 32px;
+        height: 32px;
+        border: 1px dashed var(--skin-color);
         border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
         transform: translate(-50%, -50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                    border-color 0.3s ease,
-                    background-color 0.3s ease;
+        opacity: 0.5;
+        background-color: transparent;
+        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.35s ease,
+                    opacity 0.35s ease;
+        display: block;
     }
 
-    .cursor-circle-label {
-        font-family: var(--font-sans);
-        font-size: 9px;
-        font-weight: 800;
-        color: #ffffff;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        opacity: 0;
-        transform: scale(0.6);
-        transition: opacity 0.25s ease, transform 0.25s ease;
-        pointer-events: none;
-    }
-
-    /* Custom Cursor States */
-    .custom-cursor-circle.cursor-hover {
-        width: 60px;
-        height: 60px;
-        background-color: rgba(28, 26, 24, 0.05);
-        border-color: var(--text-primary);
-    }
-
-    body.dark .custom-cursor-circle.cursor-hover {
-        background-color: rgba(244, 239, 235, 0.1);
-        border-color: var(--text-primary);
-    }
-
-    .custom-cursor-circle.cursor-project {
-        width: 85px;
-        height: 85px;
-        background-color: var(--skin-color);
-        border-color: var(--skin-color);
-    }
-
-    .custom-cursor-circle.cursor-project .cursor-circle-label {
-        opacity: 1;
-        transform: scale(1);
+    .star-cursor-ring.hovered {
+        width: 52px;
+        height: 52px;
+        border: 1.5px solid var(--skin-color);
+        background-color: rgba(236, 24, 57, 0.05);
+        opacity: 0.85;
     }
 }
 
 @media (pointer: coarse) {
-    .custom-cursor-dot,
-    .custom-cursor-circle {
+    .star-cursor,
+    .star-cursor-ring {
         display: none !important;
+    }
+}
+
+/* Premium Sparkle Star Trail Cursor */
+.sparkle-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 9998;
+    color: var(--skin-color);
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    animation: sparkleFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sparkleFade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+    }
+    20% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, -20px))) scale(0) rotate(220deg);
     }
 }
 
@@ -1775,116 +1789,4 @@ body.blueprint-mode .wireframe-mode-btn {
 /* Utilities */
 .text-accent {
     color: var(--skin-color);
-}
-
-/* Custom Cursor and Sparkle Trail System */
-@media (min-width: 768px) {
-    body {
-        cursor: none !important;
-    }
-    a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span {
-        cursor: none !important;
-    }
-}
-
-.custom-cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background-color: var(--skin-color);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-    display: none;
-}
-
-.custom-cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--skin-color);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .custom-cursor-dot,
-    .custom-cursor-ring {
-        display: block;
-    }
-}
-
-/* Hover effect state on interactive elements */
-.custom-cursor-ring.hovered {
-    width: 48px;
-    height: 48px;
-    background-color: rgba(236, 24, 57, 0.08); /* Transparent variant of skin */
-    border-color: var(--skin-color);
-}
-
-.custom-cursor-dot.hovered {
-    width: 12px;
-    height: 12px;
-}
-
-/* Premium Sparkle Star Trail Cursor */
-.sparkle-star {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    pointer-events: none;
-    z-index: 9998;
-    color: var(--skin-color); /* Dynamically matches active theme accent */
-    font-family: Arial, sans-serif;
-    line-height: 1;
-    transform: translate(-50%, -50%);
-    animation: sparkleFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes sparkleFade {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
-    }
-    20% {
-        opacity: 0.95;
-    }
-    100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, -20px))) scale(0) rotate(220deg);
-    }
-}
-
-/* Accessibility prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-delay: 0s !important;
-        animation-duration: 0s !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0s !important;
-        scroll-behavior: auto !important;
-    }
-    .sparkle-star,
-    .custom-cursor-dot,
-    .custom-cursor-ring {
-        display: none !important;
-    }
-    body, a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span {
-        cursor: auto !important;
-    }
 }

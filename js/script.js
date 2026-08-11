@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initThemeToggle();
     initHeroInteractions();
-    initCustomCursor();
+    initStarTrailCursor();
     init3DTilt();
     initAboutTabs();
     initRelationalSkills();
@@ -217,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagneticFooter();
     initContactForm();
     setCurrentYear();
-    initSparkleCursor();
 });
 
 // --- FIGMA/WIREFRAME BLUEPRINT MODE TOGGLE ---
@@ -368,70 +367,96 @@ function init3DTilt() {
     });
 }
 
-// --- SMOOTH CUSTOM CURSOR IMPLEMENTATION ---
-function initCustomCursor() {
-    const dot = document.getElementById('cursor-dot');
-    const circle = document.getElementById('cursor-circle');
-    const label = circle ? circle.querySelector('.cursor-circle-label') : null;
+// --- PREMIUM STAR TRAIL CUSTOM CURSOR IMPLEMENTATION ---
+function initStarTrailCursor() {
+    // Disable if user prefers reduced motion or is on mobile touch screen
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) {
+        return;
+    }
 
-    if (!dot || !circle) return;
+    const star = document.getElementById('star-cursor');
+    const ring = document.getElementById('star-cursor-ring');
+    if (!star || !ring) return;
 
     let mouseX = 0, mouseY = 0;
-    let dotX = 0, dotY = 0;
-    let circleX = 0, circleY = 0;
+    let starX = 0, starY = 0;
+    let ringX = 0, ringY = 0;
+    let lastTime = 0;
 
     // Track mouse coordinates
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+
+        // Instantly snap the main star to the mouse
+        star.style.left = `${mouseX}px`;
+        star.style.top = `${mouseY}px`;
+
+        // Rate-limit the sparkle star trail generation to ensure absolute buttery performance (every 30ms)
+        const now = Date.now();
+        if (now - lastTime > 30) {
+            createSparkle(mouseX, mouseY);
+            lastTime = now;
+        }
     });
 
-    // Animate custom cursor with springy lag effect
+    // Smoothly animate the lagging dashed ring using LERP
     function tick() {
-        dotX += (mouseX - dotX) * 0.35;
-        dotY += (mouseY - dotY) * 0.35;
+        const ease = 0.15; // Speed factor of trailing delay (smooth spring effect)
+        ringX += (mouseX - ringX) * ease;
+        ringY += (mouseY - ringY) * ease;
 
-        circleX += (mouseX - circleX) * 0.14;
-        circleY += (mouseY - circleY) * 0.14;
-
-        dot.style.left = `${dotX}px`;
-        dot.style.top = `${dotY}px`;
-
-        circle.style.left = `${circleX}px`;
-        circle.style.top = `${circleY}px`;
+        ring.style.left = `${ringX}px`;
+        ring.style.top = `${ringY}px`;
 
         requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
 
-    // Dynamic Hover State triggers
-    const interactiveElements = document.querySelectorAll('a, button, .skill-badge, .about-tab, .interactive-keyword, .style-switcher span, #day-night-btn, .modal-close-btn');
+    // Highlight-hover state transitions across all interactive triggers
+    const interactiveElements = document.querySelectorAll(
+        'a, button, [role="button"], .skill-badge, .about-tab, .interactive-keyword, .style-switcher span, .day-night-toggle, .nav-toggle-btn, .canvas-node, .project-image-wrapper'
+    );
+
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            circle.classList.add('cursor-hover');
-            dot.style.width = '14px';
-            dot.style.height = '14px';
+            star.classList.add('hovered');
+            ring.classList.add('hovered');
         });
-        el.addEventListener('mouseleave', () => {
-            circle.classList.remove('cursor-hover');
-            dot.style.width = '8px';
-            dot.style.height = '8px';
-        });
-    });
 
-    // Special Large EXPLORE / VIEW states for project image grids
-    const projectWrappers = document.querySelectorAll('.project-image-wrapper');
-    projectWrappers.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            circle.classList.add('cursor-project');
-            if (label) label.textContent = 'EXPLORE';
-            dot.style.opacity = '0';
-        });
         el.addEventListener('mouseleave', () => {
-            circle.classList.remove('cursor-project');
-            dot.style.opacity = '1';
+            star.classList.remove('hovered');
+            ring.classList.remove('hovered');
         });
     });
+}
+
+function createSparkle(x, y) {
+    const star = document.createElement('div');
+    star.className = 'sparkle-star';
+    star.innerHTML = '✦'; // Premium 4-pointed sparkle character
+
+    // Generate natural physical drifting properties
+    const scale = 0.4 + Math.random() * 0.7;
+    const rotate = Math.random() * 360;
+    const driftY = -15 - Math.random() * 30; // Floats upward
+    const driftX = (Math.random() - 0.5) * 40;  // Sideways drift
+
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.fontSize = `${10 + Math.random() * 6}px`;
+    star.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${rotate}deg)`;
+
+    // Inject custom animation drifting variables
+    star.style.setProperty('--drift-x', `${driftX}px`);
+    star.style.setProperty('--drift-y', `${driftY}px`);
+
+    document.body.appendChild(star);
+
+    // Garbage collector: clean DOM elements after fade-out transition completes
+    setTimeout(() => {
+        star.remove();
+    }, 800);
 }
 
 // --- STICKY & RESPONSIVE TOP HEADER NAVIGATION ---
@@ -869,96 +894,4 @@ function setCurrentYear() {
     if (element) {
         element.textContent = new Date().getFullYear();
     }
-}
-
-// --- PREMIUM CUSTOM CURSOR & SPARKLE TRAIL ---
-function initSparkleCursor() {
-    // Disable if user prefers reduced motion or is on mobile touch screen
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) {
-        return;
-    }
-
-    const dot = document.getElementById('custom-cursor-dot');
-    const ring = document.getElementById('custom-cursor-ring');
-    let lastTime = 0;
-
-    // Track cursor coordinates with high precision
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        // Position the dot instantly
-        if (dot) {
-            dot.style.left = `${mouseX}px`;
-            dot.style.top = `${mouseY}px`;
-        }
-
-        // Spawn a trailing sparkle star at a rate limit (every 30ms) to ensure perfect page performance
-        const now = Date.now();
-        if (now - lastTime > 30) {
-            createSparkle(mouseX, mouseY);
-            lastTime = now;
-        }
-    });
-
-    // Smoothly animate the lagging ring cursor using linear interpolation (LERP)
-    function animateRingCursor() {
-        const ease = 0.15; // Speed factor of trailing delay (smooth spring effect)
-        ringX += (mouseX - ringX) * ease;
-        ringY += (mouseY - ringY) * ease;
-
-        if (ring) {
-            ring.style.left = `${ringX}px`;
-            ring.style.top = `${ringY}px`;
-        }
-
-        requestAnimationFrame(animateRingCursor);
-    }
-    requestAnimationFrame(animateRingCursor);
-
-    // Coordinate hover actions across all interactive components
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span');
-
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            if (dot) dot.classList.add('hovered');
-            if (ring) ring.classList.add('hovered');
-        });
-
-        el.addEventListener('mouseleave', () => {
-            if (dot) dot.classList.remove('hovered');
-            if (ring) ring.classList.remove('hovered');
-        });
-    });
-}
-
-function createSparkle(x, y) {
-    const star = document.createElement('div');
-    star.className = 'sparkle-star';
-    star.innerHTML = '✦'; // Premium 4-pointed sparkle character
-
-    // Generate natural physical drifting properties
-    const scale = 0.5 + Math.random() * 0.8;
-    const rotate = Math.random() * 360;
-    const driftY = -15 - Math.random() * 35; // Floats upward
-    const driftX = (Math.random() - 0.5) * 50;  // Sideways drift
-
-    star.style.left = `${x}px`;
-    star.style.top = `${y}px`;
-    star.style.fontSize = `${10 + Math.random() * 8}px`;
-    star.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${rotate}deg)`;
-
-    // Inject custom animation drifting variables
-    star.style.setProperty('--drift-x', `${driftX}px`);
-    star.style.setProperty('--drift-y', `${driftY}px`);
-
-    document.body.appendChild(star);
-
-    // Garbage collector: clean DOM elements after fade-out transition completes
-    setTimeout(() => {
-        star.remove();
-    }, 800);
 }
