@@ -1069,8 +1069,8 @@ const caseStudiesData = {
                 <a href="javascript:void(0)" onclick="openCaseStudy('saha-yatri')" class="sajilo-next-project-banner">
                     <div>
                         <div class="sajilo-next-label">NEXT PROJECT &rarr;</div>
-                        <div class="sajilo-next-title">Saha-Yatri System</div>
-                        <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">Real-Time Bus Management &amp; Commuter Service Ecosystem</p>
+                        <div class="sajilo-next-title">Sajilo Web/Desktop</div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">Responsive Web / Desktop-first E-commerce Experience</p>
                     </div>
                     <div class="sajilo-next-arrow">&rarr;</div>
                 </a>
@@ -1079,43 +1079,722 @@ const caseStudiesData = {
         `
     },
     'saha-yatri': {
-        title: 'Saha-Yatri',
-        category: 'Product & Service Design',
-        meta: 'Real-Time Bus Management System',
-        image: 'images/p2.png',
-        brief: 'A dual-sided ecosystem designed to resolve chaotic public transit tracking by offering separate intuitive experiences for commuters and bus operators.',
-        sections: [
-            {
-                title: '01 — OVERVIEW',
-                html: '<p>Saha-Yatri represents a comprehensive transit product. Public transit systems often suffer from unpredictable delays, lack of live location transparency, and difficult driver-passenger synchronization. This case study details our journey from user research to interactive tracking screens.</p>'
-            },
-            {
-                title: '02 — THE DUAL EXPERIENCE',
-                html: '<p>The main differentiator of Saha-Yatri is its dual-focused user experience architecture:</p><ul><li><strong>The Commuter App:</strong> Designed for rapid legibility. Focuses on route maps, arrival notifications, live bus location points, and clear delay indicators.</li><li><strong>The Driver App:</strong> Engineered to minimize distraction. Features high-contrast tap interfaces, simple timeline routes, and basic status toggles (e.g., "Active", "Delay", "Break").</li></ul>'
-            },
-            {
-                title: '03 — USER RESEARCH & JOURNEY MAPPING',
-                html: '<p>Through contextual observation and commuter interviews, we mapped real user journeys to identify friction points:</p><ul><li>Commuters wasted significant time waiting at bus stations due to lack of real-time tracking data.</li><li>Bus drivers were overwhelmed by complex mobile screens while navigating heavy traffic.</li><li>Our design focused on large-scale interactions and high information hierarchy to prioritize speed and safety.</li></ul>'
-            },
-            {
-                title: '04 — INTERACTIVE SCREEN BLUEPRINT',
-                html: `<p>We prioritized geospatial maps as the root navigation element. Below is an abstract representation of the passenger home tracking layout:</p>
-                <div class="case-study-visual">
-                    <span class="visual-title">Commuter Real-Time Tracking UI Architecture</span>
-                    <div class="visual-wireframe-container">
-                        <div class="wireframe-box" style="height: 120px;">Geospatial Map Canvas (Live Route Points & Bus Nodes)</div>
-                        <div class="wireframe-element-row">
-                            <div class="wireframe-box" style="flex: 3;">Route S1 — Arriving in 4m</div>
-                            <div class="wireframe-box" style="flex: 1; background: #e74c3c; color: #fff;">Delay +2m</div>
+        title: 'SAJILO — सजिलो (Web)',
+        category: 'PRODUCT DESIGN / UI/UX',
+        meta: 'Shopping made simple.',
+        image: 'images/sajilo-web-collage.png',
+        brief: 'A responsive e-commerce experience designed for Nepali shoppers, with a focus on simple discovery, local products and a clearer path from browsing to checkout.',
+        customLayout: true,
+        html: `
+        <div class="sajilo-editorial-container">
+            <!-- 1. HERO -->
+            <section class="sajilo-section" style="padding-top: 0;">
+                <span class="sajilo-section-tag">PRODUCT DESIGN / UI/UX</span>
+                <h1 class="sajilo-section-title" style="font-size: clamp(40px, 8vw, 80px); margin-bottom: 8px;">Sajilo</h1>
+                <h2 style="font-size: clamp(24px, 4vw, 42px); font-weight: 500; color: #1b4d3e; margin-bottom: 24px; font-family: 'Noto Sans Devanagari', sans-serif;">सजिलो (Web/Desktop)</h2>
+                <p class="sajilo-large-typography" style="margin: 0 0 32px 0;">Shopping made simple.</p>
+                <p class="sajilo-editorial-paragraph" style="font-size: 19px; max-width: 800px; line-height: 1.6;">
+                    A responsive e-commerce experience designed for Nepali shoppers, with a focus on simple discovery, local products and a clearer path from browsing to checkout.
+                </p>
+
+                <div class="sajilo-meta-grid">
+                    <div class="sajilo-meta-item">
+                        <h4>ROLE</h4>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <div class="sajilo-meta-item">
+                        <h4>PLATFORM</h4>
+                        <p>Responsive Web</p>
+                    </div>
+                    <div class="sajilo-meta-item">
+                        <h4>TOOLS</h4>
+                        <p>Figma</p>
+                    </div>
+                    <div class="sajilo-meta-item" style="grid-column: span 3;">
+                        <h4>PROJECT</h4>
+                        <p>Personal Concept Project</p>
+                    </div>
+                </div>
+
+                <div class="sajilo-hero-image-container">
+                    <img src="images/sajilo-web-collage.png" alt="Sajilo Desktop Homepage" class="sajilo-hero-image">
+                </div>
+            </section>
+
+            <!-- 2. OVERVIEW -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">01 — OVERVIEW</span>
+                    <h3 class="sajilo-section-title">Designing a simpler way to shop online.</h3>
+                </div>
+                <div class="sajilo-text-columns-2">
+                    <div>
+                        <p class="sajilo-editorial-paragraph">
+                            Sajilo is a conceptual e-commerce website created around a simple question: what could online shopping feel like if the experience were designed to be clear, calm and locally relevant?
+                        </p>
+                    </div>
+                    <div>
+                        <p class="sajilo-editorial-paragraph">
+                            The project explores a Nepali e-commerce experience where local products and craftsmanship are not buried inside a large catalogue, but become part of the main discovery experience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Three Principles Grid -->
+                <div class="sajilo-system-grid" style="margin-top: 40px;">
+                    <div class="sajilo-system-card" style="border-left: 4px solid #1b4d3e;">
+                        <h4 style="color: #1b4d3e; font-size: 18px; margin-bottom: 8px; font-weight: 800;">SIMPLE</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Reduce unnecessary friction throughout browsing and checkout.</p>
+                    </div>
+                    <div class="sajilo-system-card" style="border-left: 4px solid #27ae60;">
+                        <h4 style="color: #27ae60; font-size: 18px; margin-bottom: 8px; font-weight: 800;">LOCAL</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Give Nepali products and craftsmanship a visible place in discovery.</p>
+                    </div>
+                    <div class="sajilo-system-card" style="border-left: 4px solid #f39c12;">
+                        <h4 style="color: #f39c12; font-size: 18px; margin-bottom: 8px; font-weight: 800;">TRUSTED</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Make product, delivery and payment information easy to understand.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. THE PROBLEM -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">02 — THE PROBLEM</span>
+                    <h3 class="sajilo-section-title">The challenge wasn't finding more products. It was finding the right one.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    Large e-commerce platforms can offer enormous product variety, but that variety can also make the experience feel crowded and difficult to navigate. For Sajilo, the design challenge was to explore how an e-commerce website could retain the useful patterns people already understand while creating a calmer and more focused shopping journey.
+                </p>
+                <p class="sajilo-editorial-paragraph" style="font-style: italic; color: var(--text-muted); margin-bottom: 32px;">
+                    "The initial research phase focused on reviewing existing e-commerce experiences and identifying patterns worth learning from."
+                </p>
+
+                <!-- Prominent Design Question -->
+                <div class="sajilo-editorial-block" data-number="💡" style="border-left: 4px solid #1b4d3e; background-color: var(--bg-surface-elevated);">
+                    <span style="font-size: 12px; font-weight: 700; color: #1b4d3e; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 8px;">Design Question</span>
+                    <h4 style="font-size: 22px; font-weight: 700; line-height: 1.4; color: var(--text-primary); margin: 0; max-width: 640px;">
+                        "How might we make online shopping feel simpler while helping Nepali products and local brands stand out?"
+                    </h4>
+                </div>
+            </section>
+
+            <!-- 4. COMPETITOR REVIEW -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">03 — COMPETITOR REVIEW</span>
+                    <h3 class="sajilo-section-title">Learning from existing e-commerce experiences.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    The competitor review helped establish familiar interaction patterns while also highlighting where Sajilo could develop its own identity. We reviewed Daraz, Jeevee, and Amazon across several key dimensions to understand baseline conventions.
+                </p>
+
+                <!-- Comparison Table -->
+                <div style="overflow-x: auto; margin: 32px 0; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); box-shadow: var(--shadow-premium);">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; background: var(--bg-surface);">
+                        <thead>
+                            <tr style="background-color: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-color);">
+                                <th style="padding: 16px; font-weight: 700;">Dimension</th>
+                                <th style="padding: 16px; font-weight: 700; color: #1b4d3e;">Daraz</th>
+                                <th style="padding: 16px; font-weight: 700; color: #27ae60;">Jeevee</th>
+                                <th style="padding: 16px; font-weight: 700; color: #e67e22;">Amazon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Homepage & discovery</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">High-density grid, heavy promotional banners</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Healthcare focused, clean category tabs</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Personalized blocks, multi-layer rows</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Navigation</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Dense multi-tier hover menus</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Simple sidebar and search focus</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Megamenu under "All" with extensive depth</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Product listing</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Dense lists, aggressive discount badges</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Structured cards with quick add-to-cart</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Standard grid, strong rating emphasis</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Product details</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Long scroll, multiple tabs, cluttered specifications</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Prescription-first, structured usage info</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Multi-column buy boxes, intense reviews</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Cart & checkout</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Voucher-heavy, multi-seller separate shipping</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Clean step-by-step progress tracker</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Single click, buy-box integrated flows</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Recommendations</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Behavioral suggestions, sometimes repeating</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Substitutes and complementary items</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Collaborative filtering, heavily integrated</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px; font-weight: 600;">Local product discovery</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Buried under general keywords and generic filters</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">N/A (mainly medical and generic baby brands)</td>
+                                <td style="padding: 16px; color: var(--text-secondary);">Amazon Launchpad/Handmade but separate tabs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Competitor Analysis Diagram Placeholder -->
+                <div class="sajilo-diagram-placeholder">
+                    <span class="sajilo-diagram-title">[COMPETITOR ANALYSIS DIAGRAM]</span>
+                    <div style="font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--text-secondary); max-width: 480px; margin: 0 auto;">
+                        Our structured audit mapped e-commerce density against user scanning speeds, establishing the precise baseline for Sajilo’s spatial spacing.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. DESIGN DIRECTION -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">04 — DESIGN DIRECTION</span>
+                    <h3 class="sajilo-section-title">Making "Sajilo" feel simple.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    The visual direction is built to convey a calm, natural, premium, local, and approachable feel. The visual restraint was intentional so product photography and important information remain easy to notice.
+                </p>
+
+                <!-- Palette Container -->
+                <div class="sajilo-palette-container">
+                    <div class="sajilo-color-swatch">
+                        <div class="sajilo-color-preview" style="background-color: #1b4d3e;"></div>
+                        <div class="sajilo-color-info">
+                            <div class="sajilo-color-name">Primary Green</div>
+                            <div class="sajilo-color-hex">#1B4D3E</div>
                         </div>
                     </div>
-                </div>`
-            },
-            {
-                title: '05 — USABILITY TESTING & FIELD ITERATIONS',
-                html: '<p>We took wireframes directly onto active public buses to conduct contextual tests. Insights gathered:</p><ul><li>Sunlight glare required us to implement an extremely high-contrast light theme with prominent typography.</li><li>Bumpy road conditions necessitated larger tap-target areas (minimum 48dp) across both user views.</li></ul>'
-            }
-        ]
+                    <div class="sajilo-color-swatch">
+                        <div class="sajilo-color-preview" style="background-color: #f5efeb;"></div>
+                        <div class="sajilo-color-info">
+                            <div class="sajilo-color-name">Warm Background</div>
+                            <div class="sajilo-color-hex">#F5EFEB</div>
+                        </div>
+                    </div>
+                    <div class="sajilo-color-swatch">
+                        <div class="sajilo-color-preview" style="background-color: #2c3e50;"></div>
+                        <div class="sajilo-color-info">
+                            <div class="sajilo-color-name">Deep Text</div>
+                            <div class="sajilo-color-hex">#2C3E50</div>
+                        </div>
+                    </div>
+                    <div class="sajilo-color-swatch">
+                        <div class="sajilo-color-preview" style="background-color: #7f8c8d;"></div>
+                        <div class="sajilo-color-info">
+                            <div class="sajilo-color-name">Muted Text</div>
+                            <div class="sajilo-color-hex">#7F8C8D</div>
+                        </div>
+                    </div>
+                    <div class="sajilo-color-swatch">
+                        <div class="sajilo-color-preview" style="background-color: #e2dcd8;"></div>
+                        <div class="sajilo-color-info">
+                            <div class="sajilo-color-name">Subtle Borders</div>
+                            <div class="sajilo-color-hex">#E2DCD8</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. INFORMATION ARCHITECTURE -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">05 — INFORMATION ARCHITECTURE</span>
+                    <h3 class="sajilo-section-title">Structuring the shopping experience.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    A clean, nested layout organizes the navigation flow and guarantees key details are always within close proximity.
+                </p>
+
+                <!-- Information Architecture Diagram -->
+                <div class="sajilo-diagram-placeholder" style="background-color: var(--bg-surface); padding: 30px;">
+                    <div style="text-align: left; display: inline-block; font-family: monospace; font-size: 14px; line-height: 1.6; color: var(--text-primary);">
+                        <strong style="color: #1b4d3e;">HOME</strong><br>
+                        ├── Search<br>
+                        ├── Categories<br>
+                        ├── Featured Products<br>
+                        ├── Local Craft<br>
+                        └── Product Discovery<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;├── Fashion<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;├── Handmade<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;├── Organic<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;├── Jewellery<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;└── Decor<br>
+                        <br>
+                        <strong style="color: #1b4d3e;">PRODUCT LISTING</strong><br>
+                        └── Filters (Categories, Material, Rating, Pricing)<br>
+                        <br>
+                        <strong style="color: #1b4d3e;">PRODUCT DETAILS</strong><br>
+                        └── Info (Images, Variants, Price, Delivery, Materials & Care, Related)<br>
+                        <br>
+                        <strong style="color: #1b4d3e;">CART</strong><br>
+                        └── Details (Products, Quantity, Delivery, Order Summary)<br>
+                        <br>
+                        <strong style="color: #1b4d3e;">CHECKOUT</strong><br>
+                        └── Stages (Delivery Details, Payment, Order Confirmation)
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. HOMEPAGE -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">06 — HOMEPAGE</span>
+                    <h3 class="sajilo-section-title">A homepage built around discovery.</h3>
+                </div>
+
+                <div class="sajilo-ui-grid-2">
+                    <div class="sajilo-screenshot-wrapper">
+                        <img src="images/sajilo-web-collage.png" alt="Sajilo Home Page Layout">
+                    </div>
+                    <div class="sajilo-callout-list">
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">01</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Search</h4>
+                                <p>The search bar is positioned prominently so users who already know what they want can immediately begin searching.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">02</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Hero Section</h4>
+                                <p>The hero communicates the product's main positioning: "Everything you need. Made simple." and introduces the local craft-focused direction.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">03</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Categories</h4>
+                                <p>The category shortcuts provide quick access to common shopping areas without requiring users to navigate through a large menu.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">04</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Featured Products</h4>
+                                <p>Featured products create a discovery layer for users who are browsing rather than searching for something specific.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">05</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Local Craft</h4>
+                                <p>The local craft section intentionally breaks the traditional product-grid pattern, introducing the people, process, and story behind local craftsmanship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. LOCAL CRAFT STORYTELLING -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">07 — LOCAL CRAFT STORYTELLING</span>
+                    <h3 class="sajilo-section-title">Selling the story, not just the product.</h3>
+                </div>
+                <div class="sajilo-text-columns-2" style="align-items: center;">
+                    <div>
+                        <p class="sajilo-editorial-paragraph">
+                            One of the ways Sajilo differentiates itself is by treating local craftsmanship as part of the shopping experience rather than simply another category.
+                        </p>
+                        <p class="sajilo-editorial-paragraph">
+                            The section uses editorial imagery and short storytelling blocks to create emotional context around local products.
+                        </p>
+                        <p class="sajilo-editorial-paragraph" style="font-style: italic; color: var(--text-muted);">
+                            "This was a design direction explored through the concept."
+                        </p>
+                    </div>
+                    <div class="sajilo-screenshot-wrapper">
+                        <img src="images/sajilo-web-collage.png" alt="Sajilo Local Craft Showcase">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. PRODUCT DISCOVERY -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">08 — PRODUCT DISCOVERY</span>
+                    <h3 class="sajilo-section-title">Making browsing easy to scan.</h3>
+                </div>
+
+                <div class="sajilo-ui-grid-2">
+                    <div class="sajilo-screenshot-wrapper">
+                        <img src="images/sajilo-web-collage.png" alt="Sajilo Product Discovery">
+                    </div>
+                    <div>
+                        <p class="sajilo-editorial-paragraph">
+                            The product listing uses a familiar e-commerce structure: Category context, Filters, Sorting, Product cards, Product imagery, Product name, Product category, Price, and Wishlist/action controls.
+                        </p>
+                        <p class="sajilo-editorial-paragraph">
+                            The left-side filter panel gives users control without overwhelming the product grid. Product cards prioritize visual recognition first, followed by essential purchasing information.
+                        </p>
+                        <div class="sajilo-editorial-block" data-number="⚡" style="margin-top: 24px;">
+                            <h4 style="margin: 0; font-size: 18px; color: #1b4d3e;">"Browse visually. Decide quickly."</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. PRODUCT DETAILS -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">09 — PRODUCT DETAILS</span>
+                    <h3 class="sajilo-section-title">Everything needed to make a purchase decision.</h3>
+                </div>
+
+                <div class="sajilo-ui-grid-2">
+                    <div class="sajilo-callout-list">
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">01</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Product Visuals</h4>
+                                <p>Large product imagery gives the product the visual priority it deserves, allowing buyers to inspect textures and detail.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">02</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Product Information</h4>
+                                <p>Name, price, rating and description are grouped together so the user can understand the product quickly.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">03</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Variants</h4>
+                                <p>Color and quantity controls are positioned close to the purchase action to decrease scanning fatigue.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">04</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Delivery</h4>
+                                <p>Delivery information appears near the purchase area because delivery expectations are part of the buying decision.</p>
+                            </div>
+                        </div>
+                        <div class="sajilo-callout-item">
+                            <div class="sajilo-callout-number">05</div>
+                            <div class="sajilo-callout-content">
+                                <h4>Related Products</h4>
+                                <p>"You might also like" provides a natural discovery path without interrupting the primary purchase flow.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sajilo-screenshot-wrapper">
+                        <img src="images/sajilo-web-collage.png" alt="Handmade Dhaka Shawl Product Details">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. CART -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">10 — CART</span>
+                    <h3 class="sajilo-section-title">Keeping the cart easy to understand.</h3>
+                </div>
+
+                <div class="sajilo-ui-grid-2">
+                    <div class="sajilo-screenshot-wrapper">
+                        <img src="images/sajilo-web-collage.png" alt="Sajilo Shopping Cart">
+                    </div>
+                    <div>
+                        <p class="sajilo-editorial-paragraph">
+                            The cart layout splits the screen to avoid overloading:
+                        </p>
+                        <p class="sajilo-editorial-paragraph" style="padding-left: 16px; border-left: 2px solid #1b4d3e;">
+                            <strong>Left:</strong> Selected products and quantity controls.<br>
+                            <strong>Right:</strong> Order summary and total (Subtotal, Delivery Fee, Total separated cleanly, with a highly dominant "Proceed to Checkout" action).
+                        </p>
+                        <p class="sajilo-editorial-paragraph">
+                            The free-delivery progress indicator provides additional context about how close the user is to the delivery threshold.
+                        </p>
+                        <p class="sajilo-editorial-paragraph" style="font-style: italic; color: var(--text-muted);">
+                            "This creates a small moment of feedback while the user reviews their cart."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. CHECKOUT -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">11 — CHECKOUT</span>
+                    <h3 class="sajilo-section-title">Reducing friction at the final step.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    For the final step, the checkout layout is structured to directly address four vital user questions:
+                </p>
+
+                <div class="sajilo-sequence-grid">
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">01</div>
+                        <div class="sajilo-sequence-title">What am I buying?</div>
+                        <p class="sajilo-sequence-desc">A condensed review of line-items, quantities, and properties.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">02</div>
+                        <div class="sajilo-sequence-title">Where is it going?</div>
+                        <p class="sajilo-sequence-desc">Clean, autofilled postal and location inputs with maps.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">03</div>
+                        <div class="sajilo-sequence-title">How will I pay?</div>
+                        <p class="sajilo-sequence-desc">Localized options like Cash on Delivery (COD) and NPR pricing.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">04</div>
+                        <div class="sajilo-sequence-title">How much will I pay?</div>
+                        <p class="sajilo-sequence-desc">Unambiguous total sum representing all fees upfront.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. RESPONSIVE THINKING -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">12 — RESPONSIVE THINKING</span>
+                    <h3 class="sajilo-section-title">Designed as a responsive experience.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    The platform coordinates the experience across screen profiles, balancing dense visual layouts with compact interactive containers.
+                </p>
+
+                <div class="sajilo-text-columns-2">
+                    <div class="sajilo-system-card">
+                        <h4 style="color: #1b4d3e; font-weight: 700; margin-bottom: 8px;">DESKTOP</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Wide layouts allow richer product discovery, persistent filter sidebars, and multi-column comparison tables.</p>
+                    </div>
+                    <div class="sajilo-system-card">
+                        <h4 style="color: #27ae60; font-weight: 700; margin-bottom: 8px;">SMALLER SCREENS</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Content progressively collapses into stacked vertical feeds, sliding panel filters, and fixed bottom utility checkout strips.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 32px; font-size: 14px; color: var(--text-muted);">
+                    If you would like to explore the dedicated mobile experience concept, please view our <a href="javascript:void(0)" onclick="openCaseStudy('sajilo')" style="color: #1b4d3e; text-decoration: underline; font-weight: 600;">Sajilo Mobile App case study</a>.
+                </div>
+            </section>
+
+            <!-- 14. DESIGN SYSTEM -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">13 — DESIGN SYSTEM</span>
+                    <h3 class="sajilo-section-title">A visual system behind the interface.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    Creating reusable patterns helped keep the interface visually consistent across discovery, product details and checkout.
+                </p>
+
+                <!-- Color & Typography Showcase -->
+                <div class="sajilo-type-showcase">
+                    <div class="sajilo-type-item">
+                        <h5>Typography</h5>
+                        <div class="sajilo-type-large" style="font-family: 'Poppins', sans-serif;">Poppins</div>
+                        <div class="sajilo-type-sample" style="font-family: 'Poppins', sans-serif;">Used for clear, modern structural headings and labels.</div>
+                    </div>
+                    <div class="sajilo-type-item">
+                        <h5>Secondary Font</h5>
+                        <div class="sajilo-type-large" style="font-family: 'Noto Sans Devanagari', sans-serif;">Devanagari</div>
+                        <div class="sajilo-type-sample" style="font-family: 'Noto Sans Devanagari', sans-serif;">Incorporated for localized headings, branding, and local terms.</div>
+                    </div>
+                </div>
+
+                <!-- Components list -->
+                <div class="sajilo-system-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
+                    <div class="sajilo-system-card">
+                        <h5 style="margin: 0 0 8px 0; color: #1b4d3e;">NAVIGATION</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Sticky headers, profile quick-menus, search boxes, and responsive side drawers.</p>
+                    </div>
+                    <div class="sajilo-system-card">
+                        <h5 style="margin: 0 0 8px 0; color: #1b4d3e;">CONTROLS</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Multi-select filters, price sliders, quantity counters, and custom variation buttons.</p>
+                    </div>
+                    <div class="sajilo-system-card">
+                        <h5 style="margin: 0 0 8px 0; color: #1b4d3e;">FEEDBACK</h5>
+                        <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Progress indicators, custom local badges, status dots, and validation states.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 15. UI STATES -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">14 — UI STATES</span>
+                    <h3 class="sajilo-section-title">Communicating feedback at every turn.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    A complete shopping experience needs to communicate not only what users can do, but also what has happened. Standardizing these states guarantees intuitive navigation.
+                </p>
+
+                <!-- UI States Grid -->
+                <div class="sajilo-states-grid">
+                    <div class="sajilo-state-card">
+                        <div class="sajilo-state-image-placeholder">
+                            <div class="sajilo-state-icon" style="color: #1b4d3e;"><i class="fa-solid fa-arrow-pointer"></i></div>
+                            <span style="font-size: 12px; font-weight: 700; color: #1b4d3e;">HOVER</span>
+                        </div>
+                        <h4>Hover & Focus</h4>
+                        <p>Underlined text links and slightly deepened background cards communicate active selection on cursor pointer.</p>
+                    </div>
+                    <div class="sajilo-states-grid" style="display: contents;">
+                        <div class="sajilo-state-card">
+                            <div class="sajilo-state-image-placeholder">
+                                <div class="sajilo-state-icon" style="color: #27ae60;"><i class="fa-solid fa-circle-check"></i></div>
+                                <span style="font-size: 12px; font-weight: 700; color: #27ae60;">SUCCESS</span>
+                            </div>
+                            <h4>Success Feedback</h4>
+                            <p>Toast banners and inline text checks let shoppers know products are successfully in the bag or payment succeeded.</p>
+                        </div>
+                        <div class="sajilo-state-card">
+                            <div class="sajilo-state-image-placeholder">
+                                <div class="sajilo-state-icon" style="color: #e74c3c;"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                <span style="font-size: 12px; font-weight: 700; color: #e74c3c;">ERROR</span>
+                            </div>
+                            <h4>Error Guidance</h4>
+                            <p>Highlighting fields with warm borders and inline messages helps resolve empty forms during checkout instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 16. HIGH-FIDELITY DESIGN -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">15 — HIGH-FIDELITY DESIGN</span>
+                    <h3 class="sajilo-section-title">The final interface.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    From discovery to checkout, the final interface brings together the product, brand and local-shopping ideas explored throughout the project.
+                </p>
+
+                <!-- Editorial Showcase Collage -->
+                <div class="sajilo-collage-grid" style="margin-top: 32px;">
+                    <div class="sajilo-collage-item sajilo-collage-item-large" style="grid-column: span 2;">
+                        <img src="images/sajilo-web-collage.png" alt="Sajilo High Fidelity Screens Collage">
+                        <div class="sajilo-collage-caption">Sajilo Web/Desktop Experience: 1. Home, 2. Listing, 3. Details, 4. Cart</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 17. FIGMA LINK INTEGRATION BOX -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">16 — FIGMA</span>
+                    <h3 class="sajilo-section-title">Explore the full design.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    The case study shows the thinking behind the experience. The complete Figma file contains the detailed screens, components and visual design.
+                </p>
+
+                <div class="sajilo-figma-box" style="border: 1px solid #1b4d3e; background-color: #fbf9f6; color: var(--text-primary);">
+                    <div class="sajilo-figma-info">
+                        <h4 style="color: #1b4d3e; font-size: 18px; font-weight: 800; margin-bottom: 6px;">Open Figma Canvas Workspace</h4>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Inspect complete page structures, layouts, design patterns, and responsive components.</p>
+                    </div>
+                    <a href="https://www.figma.com/design/EizK7HfmORHRwqebLomoZK/Sajilo-Web?node-id=0-1&t=uyVc7KwHB6rXfUt8-1" target="_blank" class="sajilo-figma-btn" style="background-color: #1b4d3e; color: #ffffff; border-radius: var(--border-radius-sm); font-size: 15px; padding: 14px 28px;">
+                        <i class="fa-brands fa-figma"></i> VIEW SAJILO IN FIGMA ↗
+                    </a>
+                </div>
+            </section>
+
+            <!-- 18. REFLECTION -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">17 — REFLECTION</span>
+                    <h3 class="sajilo-section-title">What I learned.</h3>
+                </div>
+                <div class="sajilo-text-columns-2">
+                    <div>
+                        <p class="sajilo-editorial-paragraph" style="font-size: 16px;">
+                            Working on Sajilo helped me think beyond individual screens and consider how an e-commerce experience connects discovery, decision-making and checkout.
+                        </p>
+                        <p class="sajilo-editorial-paragraph" style="font-size: 16px;">
+                            The main priority was designing for clarity rather than feature quantity. It forced me to balance quick visual product discovery with genuine local craftsmanship storytelling.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="sajilo-editorial-paragraph" style="font-size: 16px;">
+                            I also explored how checkout elements like payment options and shipping pricing directly affect a buyer’s trust. This project served as an amazing lesson in creating consistent visual components across multiple templates.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 19. WHAT I WOULD DO NEXT -->
+            <section class="sajilo-section">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">18 — WHAT I WOULD DO NEXT</span>
+                    <h3 class="sajilo-section-title">If I took Sajilo further.</h3>
+                </div>
+                <p class="sajilo-editorial-paragraph">
+                    Because this is a personal concept project, the next stage would involve real user validation. To carry the web platform forward, I would pursue these key actions:
+                </p>
+
+                <div class="sajilo-sequence-grid">
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">01</div>
+                        <div class="sajilo-sequence-title">Usability Testing</div>
+                        <p class="sajilo-sequence-desc">Conduct usability testing with Nepali online shoppers to measure browsing completion times.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">02</div>
+                        <div class="sajilo-sequence-title">Discovery & Filter Audit</div>
+                        <p class="sajilo-sequence-desc">Test product discovery and filtering controls to see if categories remain easy to query.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">03</div>
+                        <div class="sajilo-sequence-title">Local Craft Visibility</div>
+                        <p class="sajilo-sequence-desc">Validate whether shoppers notice the storytelling-focused sections and local badges.</p>
+                    </div>
+                    <div class="sajilo-sequence-step">
+                        <div class="sajilo-sequence-number">04</div>
+                        <div class="sajilo-sequence-title">Checkout Comprehension</div>
+                        <p class="sajilo-sequence-desc">Assess payment step comprehension and checkout flow clarity on desktop and mobile.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 20. FINAL STATEMENT -->
+            <section class="sajilo-section" style="border-top: 1px solid var(--border-color); padding-top: 60px;">
+                <div class="sajilo-immersive-box" style="background-color: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); text-align: center; padding: 60px 40px; margin-bottom: 40px;">
+                    <h3 style="font-family: 'Poppins', sans-serif; font-size: clamp(28px, 5vw, 48px); font-weight: 800; color: #1b4d3e; margin: 0 0 12px 0;">Sajilo</h3>
+                    <h4 style="font-family: 'Noto Sans Devanagari', sans-serif; font-size: clamp(18px, 3vw, 28px); font-weight: 500; color: var(--text-secondary); margin: 0 0 16px 0;">सजिलो</h4>
+                    <p class="sajilo-large-typography" style="font-size: 20px; color: var(--text-muted); max-width: 600px; margin: 0 auto 24px auto;">
+                        Sajilo started with a simple idea: shopping should feel simple.
+                    </p>
+                    <p style="font-size: 15px; color: var(--text-secondary); max-width: 550px; margin: 0 auto; line-height: 1.6;">
+                        The final concept brings that idea into the interface through clearer discovery, thoughtful product presentation and a stronger connection to local products.
+                    </p>
+                </div>
+            </section>
+
+            <!-- NEXT PROJECT BANNER -->
+            <section class="sajilo-section" style="padding-bottom: 0;">
+                <div class="sajilo-section-title-wrapper">
+                    <span class="sajilo-section-tag">NEXT PROJECT</span>
+                </div>
+                <a href="javascript:void(0)" onclick="openCaseStudy('kanunai')" class="sajilo-next-project-banner">
+                    <div>
+                        <div class="sajilo-next-label">NEXT PROJECT &rarr;</div>
+                        <div class="sajilo-next-title">KanunAI Platform</div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">AI Legal Research and Retrieval Platform</p>
+                    </div>
+                    <div class="sajilo-next-arrow">&rarr;</div>
+                </a>
+            </section>
+        </div>
+        `
     },
     'kanunai': {
         title: 'KanunAI',
