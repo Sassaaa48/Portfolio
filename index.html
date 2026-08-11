@@ -4,410 +4,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sasa Dhungana | Product Designer</title>
+    <!-- Primary SEO Metadata -->
+    <title>Sasa Dhungana — Product Designer & Computer Engineer</title>
+    <meta name="description" content="Portfolio of Sasa Dhungana, a Product/UI/UX Designer and Computer Engineer focused on creating intuitive digital products at the intersection of design and technology.">
 
+    <!-- Open Graph / Social Media Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sasa Dhungana — Product Designer & Computer Engineer">
+    <meta property="og:description" content="Portfolio of Sasa Dhungana, a Product/UI/UX Designer and Computer Engineer focused on creating intuitive digital products at the intersection of design and technology.">
+    <meta property="og:image" content="images/Sasa-Abu-Irmeileh.png">
+
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skins/color-1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Skin stylesheets (Theme accent color) -->
+    <link rel="stylesheet" href="css/skins/color-1.css" id="skin-stylesheet">
     <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
     <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
     <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
     <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-
-    <link rel="stylesheet" href="css/style-switcher.css">
-
 </head>
 
 <body>
 
-    <div class="main-container">
-
-        <div class="aside">
+    <!-- Sticky Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
             <div class="logo">
-                <a href="#"><span>Sasa</span></a>
+                <a href="#home">Sasa Dhungana<span>.</span></a>
             </div>
 
-            <div class="nav-toggler">
-                <span></span>
-        
-            </div>
+            <nav class="nav-desktop">
+                <ul class="nav">
+                    <li><a href="#home" class="nav-item active">Home</a></li>
+                    <li><a href="#portfolio" class="nav-item">Work</a></li>
+                    <li><a href="#design-engineering" class="nav-item">Design × Engineering</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                    <li><a href="CV/Sasa-Abu-Irmeileh-CV.pdf" target="_blank" class="nav-item resume-link"><i class="fa-solid fa-file-pdf"></i> Resume</a></li>
+                </ul>
+            </nav>
 
-            <ul class="nav">
-                <li><a href="#home" class="nav-item active"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#about" class="nav-item"><i class="fa fa-user"></i>About</a></li>
-                <li><a href="#services" class="nav-item"><i class="fa fa-list"></i>Services</a></li>
-                <li><a href="#portfolio" class="nav-item"><i class="fa fa-briefcase"></i>Portfolio</a></li>
-                <li><a href="#contact" class="nav-item"><i class="fa fa-comments"></i>Contact</a></li>
-            </ul>
+            <div class="header-actions">
+                <button class="day-night-toggle" id="day-night-btn" aria-label="Toggle visual mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
+    </header>
 
-        <div class="main-content">
-            <section class="home section " id="home">
-                <div class="container">
-                    <div class="row">
-                        <div class="home-info padd-15">
-                            <h3 class="hello">Hey there! I'm <span class="name">Sasa Dhungana</span></h3>
-                                <h3 class="my-profession">I craft clean <span class="typing">Product Design</span> experiences!</h3>
-                            <br>
-                            <p>As a passionate Product Designer and UX Researcher, I bring digital ideas to life through visually engaging and user-centered experiences. From crafting intuitive user journeys to high-fidelity prototypes, I thrive at the intersection of empathy, aesthetics, and functionality. With expertise in tools like Figma and a deep understanding of design thinking, I focus on creating accessible, inclusive, and impactful solutions. I'm constantly learning, iterating, and pushing boundaries to create products that solve real-world problems and leave a lasting impression.<br><br>
-                                Let's bring your product vision to life — beautifully and effectively!
+    <!-- Fullscreen Mobile Navigation Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <nav class="nav">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#portfolio" class="nav-item">Work</a>
+            <a href="#design-engineering" class="nav-item">Design × Engineering</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#contact" class="nav-item">Contact</a>
+            <a href="CV/Sasa-Abu-Irmeileh-CV.pdf" target="_blank" class="nav-item"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+        </nav>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-row">
+                    <div class="hero-content">
+                        <span class="hero-intro">Design meets Technology</span>
+                        <h1 class="hero-title-large">
+                            Sasa Dhungana<br>
+                            <span class="text-accent">Product Designer</span><br>
+                            <span class="italic-font">Computer Engineer</span>
+                        </h1>
+                        <p class="hero-statement">I design digital products where human needs meet technology.</p>
+                        <p class="hero-desc">
+                            Leveraging a unique hybrid background in Computer Engineering and Product Design to bridge user research, interface design, interactive systems, and technical implementation.
+                        </p>
+                        <div class="btn-group">
+                            <a href="#portfolio" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-down"></i></a>
+                            <a href="CV/Sasa-Abu-Irmeileh-CV.pdf" target="_blank" class="btn btn-outline">View Resume <i class="fa-solid fa-file-arrow-down"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <!-- High-End Interactive Design System Canvas -->
+                        <div class="hero-canvas-container">
+                            <div class="hero-canvas-grid"></div>
+
+                            <!-- Interlocking Interactive Canvas Elements -->
+                            <div class="canvas-interactive-element">
+                                <div class="design-card" id="interactive-design-card">
+                                    <div class="design-card-header">
+                                        <span class="design-card-title">Concept Node</span>
+                                        <div class="design-card-dot"></div>
+                                    </div>
+                                    <div class="design-card-body">
+                                        <h4>Design System</h4>
+                                        <p>Drag or hover over any elements to interact.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Design Handles & Nodes -->
+                            <div class="canvas-node canvas-node-1" title="Interactive UX Node"></div>
+                            <div class="canvas-node canvas-node-2" title="Engineering Grid Constraint"></div>
+                            <div class="canvas-node canvas-node-3" title="Design System Root"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work (Portfolio) Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-subtitle">A collection of digital products where design thinking, structured system architecture, and delightful interactions converge.</p>
+
+                <div class="portfolio-grid">
+
+                    <!-- Project 01 — Meeting Room Booking System -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper" onclick="openCaseStudy('meeting-room')">
+                            <img src="images/p3.png" alt="Meeting Room Booking System" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-number">01 / ENTERPRISE SYSTEM</span>
+                            <h3 class="project-title">Meeting Room Booking System</h3>
+                            <span class="project-meta">Product/UI/UX Design · Swift Technologies</span>
+                            <p class="project-description">
+                                A real-world product engineered during professional UI/UX experience. This enterprise product design case study highlights user research, interface blueprints, global design systems, usability reviews, and close engineering collaboration.
                             </p>
-                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                            <button onclick="openCaseStudy('meeting-room')" class="btn btn-outline">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
-                        <div class="home-img padd-15">
-                            <div class="half-circle"></div>
-                            <img src="images/Sasa-Abu-Irmeileh.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="about section " id="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>About Me</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="about-content padd-15">
-                            <div class="row">
-                                <div class="about-text padd-15">
-                                    <h3>I'm Sasa Dhungana a <span>Product Designer</span></h3>
-                                    <p>A passionate Product Designer and UX Researcher pursuing a degree in Computer Engineering.
-                                    Specialized in creating user-centered digital products through research-driven design,
-                                    wireframing, and high-fidelity prototyping. With a strong eye for detail and a commitment to accessibility and inclusive design, I bring empathy and precision to every project. Known for solving complex design challenges and staying up-to-date with the latest trends in UI/UX and product strategy, I aim to deliver engaging and impactful digital experiences that truly resonate with users.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="personal-info padd-15">
-                                    <ul class="info-list row">
-                                        <li class="info-item padd-15">
-                                            <p>Degree : <span>Computer Engineering</span></p>
-                                        </li>
-                                        <li class="info-item padd-15">
-                                            <p>Location : <span>Kathmandu, Nepal</span></p>
-                                        </li>
-                                      <li class="info-item padd-15">
-                                        <p>Soft Skill: <span> Effective Team Collaboration</span></p>
-                                    </li>
-                                    <li class="info-item padd-15">
-                                        <p>Strength: <span> Strong Analytical & Problem-Solving Skills</span></p>
-                                    </li>
-                                    <li class="info-item padd-15">
-                                        <p>Core Value: <span> Continuous Learning</span></p>
-                                    </li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="buttons padd-15">
-                                            <a href="#contact" class="btn hire-me">Hire Me</a>
-                                            <a href="CV/Sasa-Abu-Irmeileh-CV.pdf" class="btn outlined-btn">Download CV</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="padd-15 skills">
-                                    <ul class="skills-list row">
-                                        <li class="skill-item padd-15">
-                                            <h5>Figma</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 95%;"></div>
-                                                <div class="skill-percent">95%</div>
-                                            </div>
-                                        </li>
-                                        <li class="skill-item padd-15">
-                                            <h5>User Research</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 90%;"></div>
-                                                <div class="skill-percent">90%</div>
-                                            </div>
-                                        </li>
-                                        <li class="skill-item padd-15">
-                                            <h5>Wireframing & Prototyping</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 92%;"></div>
-                                                <div class="skill-percent">92%</div>
-                                            </div>
-                                        </li>
-                                        <li class="skill-item padd-15">
-                                            <h5>Design Systems</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 88%;"></div>
-                                                <div class="skill-percent">88%</div>
-                                            </div>
-                                        </li>
-                                        <li class="skill-item padd-15">
-                                            <h5>Visual Design</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 90%;"></div>
-                                                <div class="skill-percent">90%</div>
-                                            </div>
-                                        </li>
-                                        <li class="skill-item padd-15">
-                                            <h5>HTML / CSS / JS</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 85%;"></div>
-                                                <div class="skill-percent">85%</div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    </article>
 
-            <section class="service section " id="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title">
-                            <h2>Services</h2>
+                    <!-- Project 02 — Saha-Yatri -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper" onclick="openCaseStudy('saha-yatri')">
+                            <img src="images/p2.png" alt="Saha-Yatri System" class="project-img">
                         </div>
-                        <h2>What I'm Doing ?</h2>
-                    </div>
-                    <ul class="services-list row">
-                        <li class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-lightbulb"></i>
-                                </div>
-                                <h4>Product Strategy</h4>
-                                <p>Aligning business goals with user needs to define product roadmaps. I focus on identifying opportunities and creating strategic design solutions that drive value.</p>
-                            </div>
-                        </li>
-                        <li class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-solid fa-desktop"></i>
-                                </div>
-                                <h4>UI/UX Design</h4>
-                                <p>Creating intuitive, engaging, and accessible designs using Figma. Specialized in building comprehensive design systems, wireframes, and interactive prototypes.</p>
-                            </div>
-                        </li>
-                        <li class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-solid fa-search"></i>
-                                </div>
-                                <h4>UX Research</h4>
-                                <p>Conducting user interviews, usability testing, and competitive analysis to gather actionable insights and ensure every design decision is data-backed.</p>
-                            </div>
-                        </li>
-                        <li class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-solid fa-layer-group"></i>
-                                </div>
-                                <h4>Interaction Design</h4>
-                                <p>Defining how users interact with products through thoughtful animations and transitions, ensuring a seamless and delightful user journey.</p>
-                            </div>
-                        </li>
-                        <li class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-solid fa-code"></i>
-                                </div>
-                                <h4>Design to Code</h4>
-                                <p>Bridging the gap between design and development by providing clean handoffs and having a strong understanding of front-end implementation.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                        <div class="project-info">
+                            <span class="project-number">02 / PRODUCT & SERVICE DESIGN</span>
+                            <h3 class="project-title">Saha-Yatri</h3>
+                            <span class="project-meta">Real-Time Bus Management System</span>
+                            <p class="project-description">
+                                A comprehensive UX case study featuring dual passenger/driver interfaces. Showcasing user journey maps, contextual field testing, real-time vehicle geolocation maps, delay indicator alerts, and information hierarchy structures.
+                            </p>
+                            <button onclick="openCaseStudy('saha-yatri')" class="btn btn-outline">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
 
-            <section class="portfolio section " id="portfolio">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Portfolio</h2>
+                    <!-- Project 03 — KanunAI -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper" onclick="openCaseStudy('kanunai')">
+                            <img src="images/p6.png" alt="KanunAI Legal Platform" class="project-img">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="portfolio-heading padd-15">
-                            <h2>My Last Projects :</h2>
+                        <div class="project-info">
+                            <span class="project-number">03 / AI PLATFORM</span>
+                            <h3 class="project-title">KanunAI</h3>
+                            <span class="project-meta">AI Legal Research Platform</span>
+                            <p class="project-description">
+                                A sophisticated design for custom RAG (Retrieval-Augmented Generation) implementation of Nepali law. Featuring navigation blueprints, interface interaction mechanics, review workflows, and error diagnostic systems.
+                            </p>
+                            <button onclick="openCaseStudy('kanunai')" class="btn btn-outline">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
-                    </div>
-                    <ul class="portfolio-list row">
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/Serve-and-Shine" target="_blank">
-                                <h2>SikAI</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p1.png" alt="Serve & Shine">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/Django-Registration-System" target="_blank">
-                                <h2>SahaYatri</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p2.png" alt="Registration System">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+                    </article>
 
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/ComputerVision-Hackathon" target="_blank">
-                                <h2>Computer Vision (Express JS)</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p3.png" alt="Computer Vision ">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/django-ChatGPT-Clone" target="_blank">
-                                <h2>ChatGPT Clone (Django)</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p4.png" alt="ChatGPT Clone">
-                                    </div>
-                                </div>
-                            </a>
-                        </li> -->
-                        <!-- <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/Express-RBAC" target="_blank">
-                                <h2>RBAC (Express JS) </h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p5.png" alt="Role-Based Access Control (RBAC) System">
-                                    </div>
-                                </div>
-                            </a>
-                        </li> -->
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/OpenGL3DInteraction" target="_blank">
-                                <h2>OpenGL 3D Interaction </h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p6.png" alt="OpenGL 3D Interaction">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/AI_SokobanGame" target="_blank">
-                                <h2> AI Sokoban Game (C++)</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p7.png" alt="AI  Sokoban Game">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/CoffeeMachine" target="_blank">
-                                <h2> Coffee Machine (Java)</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p8.png" alt="Coffee Machine">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- <li class="portfolio-item padd-15">
-                            <a href="https://github.com/SasaAbuirmeileh/CPU-Scheduling-Algorithms" target="_blank">
-                                <h2> CPU Scheduling Algorithms</h2>
-                                <div class="portfolio-item-inner shadow-dark">
-                                    <div class="portfolio-img">
-                                        <img src="images/p9.png" alt="CPU Scheduling Algorithms">
-                                    </div>
-                                </div>
-                            </a>
-                        </li> -->
-                    </ul>
+                    <!-- Project 04 — BackdropX -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper" onclick="openCaseStudy('backdropx')">
+                            <img src="images/p4.png" alt="BackdropX Wallpaper App" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-number">04 / MOBILE APPLICATION</span>
+                            <h3 class="project-title">BackdropX</h3>
+                            <span class="project-meta">Mobile Wallpaper Application</span>
+                            <p class="project-description">
+                                A visually intensive mobile product design featuring high-definition grid layouts, tactile micro-interactions, swipeable categories, personal dashboards, and a one-tap save system.
+                            </p>
+                            <button onclick="openCaseStudy('backdropx')" class="btn btn-outline">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
+                    <!-- Project 05 — SikAI -->
+                    <article class="project-card">
+                        <div class="project-image-wrapper" onclick="openCaseStudy('sikai')">
+                            <img src="images/p1.png" alt="SikAI E-Learning Dashboard" class="project-img">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-number">05 / DATA VISUALIZATION</span>
+                            <h3 class="project-title">SikAI</h3>
+                            <span class="project-meta">AI-Powered E-Learning Platform</span>
+                            <p class="project-description">
+                                Designing student/teacher dashboards to present complex analytics simply. Highlighting visual metrics, data visualizations, student performance heatmaps, and live feedback alerts.
+                            </p>
+                            <button onclick="openCaseStudy('sikai')" class="btn btn-outline">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
                 </div>
-            </section>
-            <section class="contact section" id="contact">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Contact Me</h2>
+            </div>
+        </section>
+
+        <!-- Design × Engineering (Hybrid Differentiator) Section -->
+        <section class="design-eng" id="design-engineering">
+            <div class="container">
+                <div class="design-eng-grid">
+                    <div class="design-eng-desc">
+                        <span class="section-tag">Differentiator</span>
+                        <h3>Where Design Meets Engineering</h3>
+                        <p>
+                            My background in <strong>Computer Engineering</strong> provides me with a deep architectural understanding of software systems, web protocols, and algorithmic constraints.
+                        </p>
+                        <p>
+                            This engineering rigor allows me to design products that are not only user-centered and aesthetically striking but also technically sound, layout-optimized, and highly buildable. I bridge the gap between creative teams and engineering divisions to foster flawless product handoffs.
+                        </p>
+                        <a href="#contact" class="btn btn-primary">Work with Me <i class="fa-solid fa-bolt"></i></a>
+                    </div>
+
+                    <div class="skill-groups">
+                        <!-- Skill Group 1 -->
+                        <div class="skill-group-container">
+                            <h4>Product & UX</h4>
+                            <div class="skill-badges">
+                                <div class="skill-badge">
+                                    UX Research
+                                    <div class="skill-badge-explanation">Investigating user behaviors, formulating data-backed personas, and conducting user interviews.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    User Flows
+                                    <div class="skill-badge-explanation">Mapping logical path maps and state layouts to minimize cognitive friction.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Wireframing
+                                    <div class="skill-badge-explanation">Designing high-performance interface blueprints focused on information priority.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Prototyping
+                                    <div class="skill-badge-explanation">Assembling interactive systems in Figma to simulate complex application patterns.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Usability Testing
+                                    <div class="skill-badge-explanation">Formulating usability test plans and extracting actionable iteration logs.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Design Systems
+                                    <div class="skill-badge-explanation">Creating token-based design frameworks with fully reusable components and variables.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Interaction Design
+                                    <div class="skill-badge-explanation">Defining motion dynamics and micro-interactions that make interfaces feel natural and tactile.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Group 2 -->
+                        <div class="skill-group-container">
+                            <h4>Frontend Development</h4>
+                            <div class="skill-badges">
+                                <div class="skill-badge">
+                                    React
+                                    <div class="skill-badge-explanation">Developing component-driven applications with declarative states.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    JavaScript
+                                    <div class="skill-badge-explanation">Writing modern ES6+ functional code with robust asynchronous behaviors.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    HTML & CSS
+                                    <div class="skill-badge-explanation">Writing structured semantic HTML combined with scalable CSS layout designs.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    Responsive Design
+                                    <div class="skill-badge-explanation">Designing interfaces that adapt fluidly to desktop, tablet, and mobile displays.</div>
+                                </div>
+                                <div class="skill-badge">
+                                    API Integration
+                                    <div class="skill-badge-explanation">Connecting frontend layouts to RESTful endpoints and backend models.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Group 3 -->
+                        <div class="skill-group-container">
+                            <h4>Tools</h4>
+                            <div class="skill-badges">
+                                <div class="skill-badge">Figma</div>
+                                <div class="skill-badge">Adobe XD</div>
+                                <div class="skill-badge">Photoshop</div>
+                                <div class="skill-badge">Canva</div>
+                                <div class="skill-badge">Git & GitHub</div>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
-                    <h4 class="contact-sub-title padd-15"> I'M AT YOUR SERVICES</h4>
-                    <ul class="contact-info-list row">
-                        <li class="contact-info-item padd-15">
-                            <div class="icon">
-                                <a href="mailto:sasadhungana510@gmail.com"><i class="fa fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <span class="section-tag">My Story</span>
+                <h2 class="section-title">About Sasa</h2>
+                <p class="section-subtitle">Bridging the conceptual gap between human-centric design systems and functional code architecture.</p>
+
+                <div class="about-grid">
+                    <div class="about-content-left">
+                        <p class="about-description">
+                            I am Sasa Dhungana, a Computer Engineering graduate from <strong>Kathmandu University</strong> who has actively pivoted into UI/UX Product Design. This combination enables me to look at problems through a unique lens: empathetic user understanding matched with analytical technical execution.
+                        </p>
+                        <p class="about-description">
+                            Over the course of my professional UI/UX experience and frontend initiatives, I have worked across enterprise applications and consumer platforms. I focus heavily on research-driven design systems, ensuring accessibility, clarity, and structural consistency.
+                        </p>
+                        <div class="about-personal-details">
+                            <div class="detail-row">
+                                <span>Alma Mater</span>
+                                <span>Kathmandu University</span>
                             </div>
-                            <h4>Email</h4>
-                        </li>
-                        <li class="contact-info-item padd-15">
-                            <div class="icon">
-                                <a href="https://github.com/Sassaaa48" aria-label="github" target="_blank"><i class="fa fa-brands fa-github"></i></a>
+                            <div class="detail-row">
+                                <span>Degree</span>
+                                <span>B.E. Computer Engineering</span>
                             </div>
-                            <h4>Github</h4>
-                        </li>
-                        <li class="contact-info-item padd-15">
-                            <div class="icon">
-                                <a href="https://www.linkedin.com/in/sasa-dhungana-2b0a12283/" target="_blank"><i class="fa fa-brands fa-linkedin"></i></a>
+                            <div class="detail-row">
+                                <span>Core Strengths</span>
+                                <span>Design Systems, UX Research, Interaction Architecture</span>
                             </div>
-                            <h4>Linkedin</h4>
-                        </li>
-                        <li class="contact-info-item padd-15">
-                            <div class="icon">
-                                <a href="https://medium.com/@SasaDhungana" target="_blank"><i class="fa fa-brands fa-medium"></i></a>
+                            <div class="detail-row">
+                                <span>Location</span>
+                                <span>Kathmandu, Nepal</span>
                             </div>
-                            <h4>Medium</h4>
-                        </li>
-                    </ul>
-                    <h3 class="contact-title padd-15">SEND ME ANY EMAIL</h3>
-                    <h4 class="contact-sub-title padd-15"> I'M VERY RESPONSIVE TO MASSAGES</h4>
-                    <div class="row">
-                        <form class="contact-form padd-15">
-                            <div class="row">
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
-                                    </div>
+                        </div>
+                        <div style="margin-top: 32px;">
+                            <a href="CV/Sasa-Abu-Irmeileh-CV.pdf" target="_blank" class="btn btn-primary">Download Resume <i class="fa-solid fa-file-arrow-down"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="about-content-right">
+                        <!-- Elegant Visual Timeline -->
+                        <div class="timeline-container">
+
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">Product & UI/UX Designer</h4>
+                                    <span class="timeline-date">Professional Experience</span>
                                 </div>
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
+                                <div class="timeline-sub">Swift Technologies</div>
+                                <p class="timeline-desc">
+                                    Formulated enterprise-grade products including complex reservation booking grids and visual system wireframes. Crafted responsive design systems, conducted rigorous design audits, and synchronized design states with engineering frameworks.
+                                </p>
                             </div>
-                            <div class="row">
-                                <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                    </div>
+
+                            <!-- Timeline Item 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">B.E. Computer Engineering</h4>
+                                    <span class="timeline-date">Graduate</span>
                                 </div>
+                                <div class="timeline-sub">Kathmandu University</div>
+                                <p class="timeline-desc">
+                                    Acquired solid analytical skills, software lifecycle concepts, algorithm design foundations, and a system-first design mentality. Pioneered dual passenger-driver real-time systems during design-engineering sprints.
+                                </p>
                             </div>
-                            <div class="row">
-                                <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <textarea name="" id="" class="form-control" placeholder="Message"></textarea>
-                                    </div>
+
+                            <!-- Timeline Item 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">Frontend Developer & UX Explorer</h4>
+                                    <span class="timeline-date">Independent</span>
                                 </div>
+                                <div class="timeline-sub">Design & Code Integration</div>
+                                <p class="timeline-desc">
+                                    Developed React, JavaScript, and HTML/CSS portfolio modules. Built semantic markup, tested cognitive interactions, and combined data schemas with visual dashboards.
+                                </p>
                             </div>
-                            <div class="row">
-                                <div class="form-item col-12 padd-15">
-                                    <button type="submit" class="btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="contact-headline">LET'S BUILD<br>SOMETHING USEFUL.</h2>
+                <p class="contact-desc">
+                    I'm interested in opportunities across Product Design, UI/UX and technology-driven product teams.
+                </p>
+
+                <!-- Social Action Buttons -->
+                <div class="contact-links">
+                    <a href="mailto:sasadhungana510@gmail.com" class="contact-social-btn">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/sasa-dhungana-2b0a12283/" target="_blank" class="contact-social-btn">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Sassaaa48" target="_blank" class="contact-social-btn">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="https://medium.com/@SasaDhungana" target="_blank" class="contact-social-btn">
+                        <i class="fa-brands fa-medium"></i> Medium
+                    </a>
+                </div>
+
+                <!-- Sleek Modern Form Container -->
+                <div class="form-container">
+                    <form class="contact-form" id="contact-form-redesign">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="Your email address" required>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" class="form-input" placeholder="What's this about?" required>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" class="form-input" placeholder="Your detailed thoughts..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Case Studies Modals Overlay Base -->
+    <div class="case-study-modal" id="case-study-modal">
+        <button class="modal-close-btn" onclick="closeCaseStudy()" aria-label="Close Case Study">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="case-study-content" id="case-study-modal-content">
+            <!-- Rendered Dynamically via JS -->
         </div>
     </div>
 
-    <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
-        </div>
-        <div class="day-night s-icon">
-            <i class="fas "></i>
-        </div>
-        <h4>Theme Colors</h4>
+    <!-- Accent Color Design-System Tool -->
+    <div class="style-switcher" id="style-switcher">
+        <h4>Accent</h4>
         <div class="colors">
             <span class="color-1" onclick="setActiveStyle('color-1')"></span>
             <span class="color-2" onclick="setActiveStyle('color-2')"></span>
@@ -417,9 +476,16 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"
-        integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Minimal Clean Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; <span id="current-year"></span> Sasa Dhungana. Crafted with design integrity and frontend precision. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
 </body>
