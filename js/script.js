@@ -209,9 +209,229 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initThemeToggle();
     initHeroInteractions();
+    initCustomCursor();
+    init3DTilt();
+    initAboutTabs();
+    initRelationalSkills();
+    initBlueprintMode();
+    initMagneticFooter();
     initContactForm();
     setCurrentYear();
 });
+
+// --- FIGMA/WIREFRAME BLUEPRINT MODE TOGGLE ---
+function initBlueprintMode() {
+    const btn = document.getElementById('wireframe-btn');
+    if (!btn) return;
+
+    function toggleBlueprint() {
+        const active = document.body.classList.toggle('blueprint-mode');
+        const icon = btn.querySelector('i');
+        const span = btn.querySelector('span');
+
+        if (active) {
+            icon.className = 'fa-solid fa-drafting-compass';
+            if (span) span.textContent = 'Active (Press \'D\')';
+        } else {
+            icon.className = 'fa-solid fa-ruler-combined';
+            if (span) span.textContent = 'Blueprint Mode (Press \'D\')';
+        }
+    }
+
+    // Floating Button click trigger
+    btn.addEventListener('click', toggleBlueprint);
+
+    // Keyboard Key 'D' trigger
+    window.addEventListener('keydown', (e) => {
+        const target = e.target.tagName.toLowerCase();
+        // Skip keydown logic if the user is actively typing in form inputs
+        if (target === 'input' || target === 'textarea') return;
+
+        if (e.key === 'd' || e.key === 'D') {
+            toggleBlueprint();
+        }
+    });
+}
+
+// --- MAGNETIC FOOTER SOCIAL INTERACTION ---
+function initMagneticFooter() {
+    const emailBtn = document.getElementById('social-email-btn');
+    if (!emailBtn) return;
+
+    emailBtn.addEventListener('mousemove', (e) => {
+        const rect = emailBtn.getBoundingClientRect();
+        // Calculate coordinate offsets inside the button bounds
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Apply magnetic translation pull (spring ratio)
+        emailBtn.style.transform = `translate3d(${x * 0.35}px, ${y * 0.35}px, 0)`;
+        emailBtn.style.boxShadow = '0 12px 30px rgba(28,26,24,0.15)';
+    });
+
+    emailBtn.addEventListener('mouseleave', () => {
+        emailBtn.style.transform = '';
+        emailBtn.style.boxShadow = '';
+    });
+}
+
+// --- INTERACTIVE ABOUT SECTION TABS ---
+function initAboutTabs() {
+    const tabs = document.querySelectorAll('.about-tab');
+    const contents = document.querySelectorAll('.about-tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-tab');
+
+            // Toggle active state on tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Toggle active content panel
+            contents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `tab-${target}`) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+// --- RELATIONAL SKILLS TO PROJECTS HOVER ---
+function initRelationalSkills() {
+    const badges = document.querySelectorAll('.skill-badge');
+
+    badges.forEach(badge => {
+        const targetProjId = badge.getAttribute('data-related-project');
+        if (!targetProjId) return;
+
+        badge.addEventListener('mouseenter', () => {
+            const projectCard = document.getElementById(targetProjId);
+            if (projectCard) {
+                projectCard.classList.add('project-highlighted');
+                // Scroll project card into center focus if the user hovers long enough, or just highlight beautifully
+            }
+        });
+
+        badge.addEventListener('mouseleave', () => {
+            const projectCard = document.getElementById(targetProjId);
+            if (projectCard) {
+                projectCard.classList.remove('project-highlighted');
+            }
+        });
+    });
+}
+
+// --- 3D PARALLAX IMAGE TILT ---
+function init3DTilt() {
+    // Only apply 3D mouse physics on desktop environments
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    const cards = document.querySelectorAll('.project-image-wrapper');
+    cards.forEach(card => {
+        const img = card.querySelector('.project-img');
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Map standard coordinate bounds to degrees (-10deg to 10deg)
+            const xRotate = ((y / rect.height) - 0.5) * -12;
+            const yRotate = ((x / rect.width) - 0.5) * 12;
+
+            card.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
+            if (img) {
+                // translate inner image with reverse parallax
+                const xTranslate = ((x / rect.width) - 0.5) * -15;
+                const yTranslate = ((y / rect.height) - 0.5) * -15;
+                img.style.transform = `scale(1.06) translate3d(${xTranslate}px, ${yTranslate}px, 20px)`;
+            }
+        });
+
+        card.style.transformOrigin = 'center center';
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            if (img) {
+                img.style.transform = 'scale(1) translate3d(0, 0, 20px)';
+                img.style.transition = 'transform 0.5s ease';
+            }
+        });
+
+        card.addEventListener('mouseenter', () => {
+            if (img) img.style.transition = 'none';
+        });
+    });
+}
+
+// --- SMOOTH CUSTOM CURSOR IMPLEMENTATION ---
+function initCustomCursor() {
+    const dot = document.getElementById('cursor-dot');
+    const circle = document.getElementById('cursor-circle');
+    const label = circle ? circle.querySelector('.cursor-circle-label') : null;
+
+    if (!dot || !circle) return;
+
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+    let circleX = 0, circleY = 0;
+
+    // Track mouse coordinates
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Animate custom cursor with springy lag effect
+    function tick() {
+        dotX += (mouseX - dotX) * 0.35;
+        dotY += (mouseY - dotY) * 0.35;
+
+        circleX += (mouseX - circleX) * 0.14;
+        circleY += (mouseY - circleY) * 0.14;
+
+        dot.style.left = `${dotX}px`;
+        dot.style.top = `${dotY}px`;
+
+        circle.style.left = `${circleX}px`;
+        circle.style.top = `${circleY}px`;
+
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // Dynamic Hover State triggers
+    const interactiveElements = document.querySelectorAll('a, button, .skill-badge, .about-tab, .interactive-keyword, .style-switcher span, #day-night-btn, .modal-close-btn');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            circle.classList.add('cursor-hover');
+            dot.style.width = '14px';
+            dot.style.height = '14px';
+        });
+        el.addEventListener('mouseleave', () => {
+            circle.classList.remove('cursor-hover');
+            dot.style.width = '8px';
+            dot.style.height = '8px';
+        });
+    });
+
+    // Special Large EXPLORE / VIEW states for project image grids
+    const projectWrappers = document.querySelectorAll('.project-image-wrapper');
+    projectWrappers.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            circle.classList.add('cursor-project');
+            if (label) label.textContent = 'EXPLORE';
+            dot.style.opacity = '0';
+        });
+        el.addEventListener('mouseleave', () => {
+            circle.classList.remove('cursor-project');
+            dot.style.opacity = '1';
+        });
+    });
+}
 
 // --- STICKY & RESPONSIVE TOP HEADER NAVIGATION ---
 function initNavigation() {
@@ -307,49 +527,246 @@ function initThemeToggle() {
     });
 }
 
-// --- HIGH-END HERO INTERACTIONS & PHYSICS ---
+// --- HIGH-END HERO PLAYGROUND & DRAG PHYSICS ---
 function initHeroInteractions() {
-    const card = document.getElementById('interactive-design-card');
-    const container = document.querySelector('.hero-canvas-container');
+    const canvas = document.getElementById('playground-canvas');
+    if (!canvas) return;
 
-    if (!card || !container) return;
+    const toys = document.querySelectorAll('.draggable-toy');
+    const coordX = document.getElementById('coord-x');
+    const coordY = document.getElementById('coord-y');
 
-    // Smooth Interactive Tilting Physics
-    container.addEventListener('mousemove', (e) => {
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left; // x coordinate inside the container
-        const y = e.clientY - rect.top;  // y coordinate inside the container
+    let activeToy = null;
+    let isDragging = false;
+    let isResizing = false;
+    let startX, startY, startLeft, startTop, startWidth, startHeight;
 
-        // Map coordinates to degrees (-10deg to 10deg)
-        const xRotate = ((y / rect.height) - 0.5) * -15;
-        const yRotate = ((x / rect.width) - 0.5) * 15;
+    // Connective Line elements
+    const connectionLine = document.getElementById('connection-line-1');
 
-        // Apply interactive transformation
-        card.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg) scale(1.03)`;
-        card.style.transition = 'transform 0.1s ease';
-    });
-
-    // Reset Transformation on Leave
-    container.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(-3deg) rotateY(0deg) scale(1)';
-        card.style.transition = 'transform 0.5s ease';
-    });
-
-    // Touch Interactive Actions for Mobile Devices
-    container.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-            const touch = e.touches[0];
-            const rect = container.getBoundingClientRect();
-            const x = touch.clientX - rect.left;
-            const y = touch.clientY - rect.top;
-
-            if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-                const xRotate = ((y / rect.height) - 0.5) * -10;
-                const yRotate = ((x / rect.width) - 0.5) * 10;
-                card.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
-            }
+    // Update real-time coordinates overlay
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.round(e.clientX - rect.left);
+        const y = Math.round(e.clientY - rect.top);
+        if (coordX && coordY) {
+            coordX.textContent = x;
+            coordY.textContent = y;
         }
+        updateConnections();
+    });
+
+    toys.forEach(toy => {
+        const handle = toy.querySelector('.resize-handle');
+        const designCard = toy.querySelector('.design-card');
+        const codeCard = toy.querySelector('.code-card');
+
+        // Mousedown for dragging
+        toy.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('resize-handle') || e.target.classList.contains('toy-inner-btn')) return;
+            activeToy = toy;
+            isDragging = true;
+            toy.style.zIndex = 10;
+            // elevate hierarchy
+            toys.forEach(t => { if (t !== toy) t.style.zIndex = 5; });
+
+            const rect = toy.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+
+            startX = e.clientX;
+            startY = e.clientY;
+            startLeft = rect.left - canvasRect.left;
+            startTop = rect.top - canvasRect.top;
+
+            e.preventDefault();
+        });
+
+        // Mousedown for resizing
+        if (handle) {
+            handle.addEventListener('mousedown', (e) => {
+                activeToy = toy;
+                isResizing = true;
+                const targetCard = designCard || codeCard;
+                const cardRect = targetCard.getBoundingClientRect();
+
+                startX = e.clientX;
+                startY = e.clientY;
+                startWidth = cardRect.width;
+                startHeight = cardRect.height;
+
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!activeToy) return;
+
+        if (isDragging) {
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+
+            let newLeft = startLeft + dx;
+            let newTop = startTop + dy;
+
+            // Restrict movement inside canvas boundary
+            const canvasRect = canvas.getBoundingClientRect();
+            const toyRect = activeToy.getBoundingClientRect();
+
+            const maxLeft = canvasRect.width - toyRect.width;
+            const maxTop = canvasRect.height - toyRect.height;
+
+            newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+            newTop = Math.max(0, Math.min(newTop, maxTop));
+
+            activeToy.style.left = `${newLeft}px`;
+            activeToy.style.top = `${newTop}px`;
+        }
+
+        if (isResizing) {
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+
+            const designCard = activeToy.querySelector('.design-card');
+            const codeCard = activeToy.querySelector('.code-card');
+            const card = designCard || codeCard;
+            const wSpan = activeToy.querySelector('.toy-w');
+            const hSpan = activeToy.querySelector('.toy-h');
+
+            const newWidth = Math.max(160, startWidth + dx);
+            const newHeight = Math.max(100, startHeight + dy);
+
+            if (card) {
+                card.style.width = `${newWidth}px`;
+                card.style.height = `${newHeight}px`;
+            }
+            if (wSpan) wSpan.textContent = Math.round(newWidth);
+            if (hSpan) hSpan.textContent = Math.round(newHeight);
+        }
+
+        updateConnections();
+    });
+
+    document.addEventListener('mouseup', () => {
+        activeToy = null;
+        isDragging = false;
+        isResizing = false;
+    });
+
+    // Touch support for mobile devices (Dragging only)
+    toys.forEach(toy => {
+        toy.addEventListener('touchstart', (e) => {
+            if (e.target.classList.contains('resize-handle') || e.target.classList.contains('toy-inner-btn')) return;
+            activeToy = toy;
+            isDragging = true;
+            toy.style.zIndex = 10;
+            toys.forEach(t => { if (t !== toy) t.style.zIndex = 5; });
+
+            const touch = e.touches[0];
+            const rect = toy.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+
+            startX = touch.clientX;
+            startY = touch.clientY;
+            startLeft = rect.left - canvasRect.left;
+            startTop = rect.top - canvasRect.top;
+        }, { passive: true });
+    });
+
+    canvas.addEventListener('touchmove', (e) => {
+        if (!activeToy || !isDragging) return;
+        const touch = e.touches[0];
+        const dx = touch.clientX - startX;
+        const dy = touch.clientY - startY;
+
+        let newLeft = startLeft + dx;
+        let newTop = startTop + dy;
+
+        const canvasRect = canvas.getBoundingClientRect();
+        const toyRect = activeToy.getBoundingClientRect();
+
+        const maxLeft = canvasRect.width - toyRect.width;
+        const maxTop = canvasRect.height - toyRect.height;
+
+        newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+        newTop = Math.max(0, Math.min(newTop, maxTop));
+
+        activeToy.style.left = `${newLeft}px`;
+        activeToy.style.top = `${newTop}px`;
+
+        updateConnections();
     }, { passive: true });
+
+    canvas.addEventListener('touchend', () => {
+        activeToy = null;
+        isDragging = false;
+    });
+
+    // Subtly connect Toy 1 & Toy 2 with a dynamic vector SVG line
+    function updateConnections() {
+        const toy1 = document.getElementById('toy-design-card');
+        const toy2 = document.getElementById('toy-code-card');
+        if (!toy1 || !toy2 || !connectionLine) return;
+
+        const canvasRect = canvas.getBoundingClientRect();
+        const t1Rect = toy1.getBoundingClientRect();
+        const t2Rect = toy2.getBoundingClientRect();
+
+        // Calculate center points relative to the canvas container
+        const x1 = t1Rect.left - canvasRect.left + t1Rect.width / 2;
+        const y1 = t1Rect.top - canvasRect.top + t1Rect.height / 2;
+
+        const x2 = t2Rect.left - canvasRect.left + t2Rect.width / 2;
+        const y2 = t2Rect.top - canvasRect.top + t2Rect.height / 2;
+
+        connectionLine.setAttribute('x1', x1);
+        connectionLine.setAttribute('y1', y1);
+        connectionLine.setAttribute('x2', x2);
+        connectionLine.setAttribute('y2', y2);
+    }
+
+    // Initialize line points
+    setTimeout(updateConnections, 100);
+
+    // Keyword interactive triggers: DESIGN, CODE, PRODUCT
+    const keywords = document.querySelectorAll('.interactive-keyword');
+    keywords.forEach(kw => {
+        kw.addEventListener('mouseenter', () => {
+            const key = kw.getAttribute('data-keyword');
+            const t1 = document.getElementById('toy-design-card');
+            const t2 = document.getElementById('toy-code-card');
+            const badge = document.getElementById('toy-badge');
+
+            if (key === 'design' && t1) {
+                t1.style.transform = 'scale(1.1) rotate(4deg)';
+                t1.style.boxShadow = '0 20px 45px rgba(236,24,57,0.25)';
+            } else if (key === 'code' && t2) {
+                t2.style.transform = 'scale(1.1) rotate(-4deg)';
+                t2.style.boxShadow = '0 20px 45px rgba(90,226,174,0.25)';
+            } else if (key === 'product' && badge) {
+                badge.style.transform = 'scale(1.25) translateY(-5px)';
+            }
+        });
+
+        kw.addEventListener('mouseleave', () => {
+            const t1 = document.getElementById('toy-design-card');
+            const t2 = document.getElementById('toy-code-card');
+            const badge = document.getElementById('toy-badge');
+
+            if (t1) {
+                t1.style.transform = '';
+                t1.style.boxShadow = '';
+            }
+            if (t2) {
+                t2.style.transform = '';
+                t2.style.boxShadow = '';
+            }
+            if (badge) {
+                badge.style.transform = '';
+            }
+        });
+    });
 }
 
 // --- FULL-SCREEN CASE STUDY MODAL WORKFLOWS ---
