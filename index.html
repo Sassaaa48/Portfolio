@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Primary SEO Metadata -->
-    <title>Sasa Dhungana — Product Designer & Computer Engineer</title>
-    <meta name="description" content="Portfolio of Sasa Dhungana, a Product/UI/UX Designer and Computer Engineer focused on creating intuitive digital products at the intersection of design and technology.">
+    <title>Sasa Dhungana — UI/UX (Product) Designer</title>
+    <meta name="description" content="Portfolio of Sasa Dhungana, a UI/UX (Product) Designer focused on creating intuitive digital products at the intersection of design and technology.">
 
     <!-- Open Graph / Social Media Metadata -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Sasa Dhungana — Product Designer & Computer Engineer">
-    <meta property="og:description" content="Portfolio of Sasa Dhungana, a Product/UI/UX Designer and Computer Engineer focused on creating intuitive digital products at the intersection of design and technology.">
+    <meta property="og:title" content="Sasa Dhungana — UI/UX (Product) Designer">
+    <meta property="og:description" content="Portfolio of Sasa Dhungana, a UI/UX (Product) Designer focused on creating intuitive digital products at the intersection of design and technology.">
     <meta property="og:image" content="images/Sasa-Abu-Irmeileh.png">
 
     <!-- CSS Stylesheets -->
@@ -27,7 +27,13 @@
     <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
 </head>
 
-<body>
+<body class="custom-cursor-enabled">
+
+    <!-- Tasteful Custom Cursor Shell -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-circle" id="cursor-circle">
+        <span class="cursor-circle-label">EXPLORE</span>
+    </div>
 
     <!-- Sticky Navigation Header -->
     <header class="site-header">
@@ -83,12 +89,15 @@
                         <span class="hero-intro">Design meets Technology</span>
                         <h1 class="hero-title-large">
                             Sasa Dhungana<br>
-                            <span class="text-accent">Product Designer</span><br>
-                            <span class="italic-font">Computer Engineer</span>
+                            <span class="text-accent">UI/UX (Product)</span><br>
+                            <span class="italic-font">Designer</span>
                         </h1>
                         <p class="hero-statement">I design digital products where human needs meet technology.</p>
                         <p class="hero-desc">
-                            Leveraging a unique hybrid background in Computer Engineering and Product Design to bridge user research, interface design, interactive systems, and technical implementation.
+                            Leveraging a unique hybrid background in Computer Engineering and Product Design to bridge user research, interface design, interactive systems, and technical implementation. Hover or interact with keywords below:
+                            <span class="interactive-keyword" data-keyword="design">DESIGN</span> /
+                            <span class="interactive-keyword" data-keyword="code">CODE</span> /
+                            <span class="interactive-keyword" data-keyword="product">PRODUCT</span>.
                         </p>
                         <div class="btn-group">
                             <a href="#portfolio" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-down"></i></a>
@@ -97,28 +106,57 @@
                     </div>
 
                     <div class="hero-visual">
-                        <!-- High-End Interactive Design System Canvas -->
-                        <div class="hero-canvas-container">
+                        <!-- High-End Interactive Design System Canvas (Digital Playground) -->
+                        <div class="hero-canvas-container" id="playground-canvas">
                             <div class="hero-canvas-grid"></div>
 
-                            <!-- Interlocking Interactive Canvas Elements -->
-                            <div class="canvas-interactive-element">
-                                <div class="design-card" id="interactive-design-card">
+                            <!-- Canvas status banner / coordinates -->
+                            <div class="canvas-coords-status">
+                                <span>Canvas: Active</span> | X: <span id="coord-x">0</span> Y: <span id="coord-y">0</span>
+                            </div>
+
+                            <!-- Draggable Element 1: Design Component Card -->
+                            <div class="draggable-toy" id="toy-design-card" style="top: 60px; left: 40px;">
+                                <div class="design-card">
                                     <div class="design-card-header">
-                                        <span class="design-card-title">Concept Node</span>
+                                        <span class="design-card-title">Button_Primary.fig</span>
                                         <div class="design-card-dot"></div>
                                     </div>
                                     <div class="design-card-body">
-                                        <h4>Design System</h4>
-                                        <p>Drag or hover over any elements to interact.</p>
+                                        <button class="toy-inner-btn">Interactive Call</button>
+                                        <div class="toy-dimensions">W: <span class="toy-w">220</span>px | H: <span class="toy-h">110</span>px</div>
                                     </div>
+                                </div>
+                                <div class="resize-handle"></div>
+                            </div>
+
+                            <!-- Draggable Element 2: Engineering Flow Code Card -->
+                            <div class="draggable-toy" id="toy-code-card" style="top: 220px; left: 160px;">
+                                <div class="code-card">
+                                    <div class="code-card-header">
+                                        <span>SystemState.ts</span>
+                                        <div class="code-indicator"></div>
+                                    </div>
+                                    <pre class="code-preview"><code>const ux = {
+  vibe: "playful",
+  feels: "premium"
+};</code></pre>
+                                    <div class="toy-dimensions">W: <span class="toy-w">200</span>px | H: <span class="toy-h">115</span>px</div>
+                                </div>
+                                <div class="resize-handle"></div>
+                            </div>
+
+                            <!-- Draggable Element 3: Sparkles Badge -->
+                            <div class="draggable-toy" id="toy-badge" style="top: 140px; left: 240px;">
+                                <div class="badge-toy-inner">
+                                    <i class="fa-solid fa-sparkles"></i> Playful UI
                                 </div>
                             </div>
 
-                            <!-- Interactive Design Handles & Nodes -->
-                            <div class="canvas-node canvas-node-1" title="Interactive UX Node"></div>
-                            <div class="canvas-node canvas-node-2" title="Engineering Grid Constraint"></div>
-                            <div class="canvas-node canvas-node-3" title="Design System Root"></div>
+                            <!-- Floating Connective SVG Line -->
+                            <svg class="playground-connections-svg">
+                                <line id="connection-line-1" x1="0" y1="0" x2="0" y2="0" stroke="var(--skin-color)" stroke-dasharray="4,4" stroke-width="1.5" opacity="0.4" />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -135,7 +173,7 @@
                 <div class="portfolio-grid">
 
                     <!-- Project 01 — Meeting Room Booking System -->
-                    <article class="project-card">
+                    <article class="project-card" id="project-meeting-room">
                         <div class="project-image-wrapper" onclick="openCaseStudy('meeting-room')">
                             <img src="images/p3.png" alt="Meeting Room Booking System" class="project-img">
                         </div>
@@ -151,7 +189,7 @@
                     </article>
 
                     <!-- Project 02 — Saha-Yatri -->
-                    <article class="project-card">
+                    <article class="project-card" id="project-saha-yatri">
                         <div class="project-image-wrapper" onclick="openCaseStudy('saha-yatri')">
                             <img src="images/p2.png" alt="Saha-Yatri System" class="project-img">
                         </div>
@@ -167,7 +205,7 @@
                     </article>
 
                     <!-- Project 03 — KanunAI -->
-                    <article class="project-card">
+                    <article class="project-card" id="project-kanunai">
                         <div class="project-image-wrapper" onclick="openCaseStudy('kanunai')">
                             <img src="images/p6.png" alt="KanunAI Legal Platform" class="project-img">
                         </div>
@@ -183,7 +221,7 @@
                     </article>
 
                     <!-- Project 04 — BackdropX -->
-                    <article class="project-card">
+                    <article class="project-card" id="project-backdropx">
                         <div class="project-image-wrapper" onclick="openCaseStudy('backdropx')">
                             <img src="images/p4.png" alt="BackdropX Wallpaper App" class="project-img">
                         </div>
@@ -199,7 +237,7 @@
                     </article>
 
                     <!-- Project 05 — SikAI -->
-                    <article class="project-card">
+                    <article class="project-card" id="project-sikai">
                         <div class="project-image-wrapper" onclick="openCaseStudy('sikai')">
                             <img src="images/p1.png" alt="SikAI E-Learning Dashboard" class="project-img">
                         </div>
@@ -239,33 +277,33 @@
                         <div class="skill-group-container">
                             <h4>Product & UX</h4>
                             <div class="skill-badges">
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-meeting-room">
                                     UX Research
-                                    <div class="skill-badge-explanation">Investigating user behaviors, formulating data-backed personas, and conducting user interviews.</div>
+                                    <div class="skill-badge-explanation">Meeting Room Booking: Investigating user behaviors, formulating data-backed personas, and conducting user interviews.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-saha-yatri">
                                     User Flows
-                                    <div class="skill-badge-explanation">Mapping logical path maps and state layouts to minimize cognitive friction.</div>
+                                    <div class="skill-badge-explanation">Saha-Yatri: Mapping logical passenger/driver paths to minimize transit friction.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-meeting-room">
                                     Wireframing
-                                    <div class="skill-badge-explanation">Designing high-performance interface blueprints focused on information priority.</div>
+                                    <div class="skill-badge-explanation">Meeting Room Booking: Designing enterprise-grade reservation schedules and timelines.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-backdropx">
                                     Prototyping
-                                    <div class="skill-badge-explanation">Assembling interactive systems in Figma to simulate complex application patterns.</div>
+                                    <div class="skill-badge-explanation">BackdropX: Assembling intensive sensory prototypes in Figma for fluid category swipes.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-saha-yatri">
                                     Usability Testing
-                                    <div class="skill-badge-explanation">Formulating usability test plans and extracting actionable iteration logs.</div>
+                                    <div class="skill-badge-explanation">Saha-Yatri: Contextual field testing on public buses under dynamic sunlight glare.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-meeting-room">
                                     Design Systems
-                                    <div class="skill-badge-explanation">Creating token-based design frameworks with fully reusable components and variables.</div>
+                                    <div class="skill-badge-explanation">Meeting Room Booking: Crafting global modular tokens for responsive B2B product syncing.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-backdropx">
                                     Interaction Design
-                                    <div class="skill-badge-explanation">Defining motion dynamics and micro-interactions that make interfaces feel natural and tactile.</div>
+                                    <div class="skill-badge-explanation">BackdropX: Formulating spring-driven CSS gestures and micro-interactions.</div>
                                 </div>
                             </div>
                         </div>
@@ -274,25 +312,25 @@
                         <div class="skill-group-container">
                             <h4>Frontend Development</h4>
                             <div class="skill-badges">
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-sikai">
                                     React
-                                    <div class="skill-badge-explanation">Developing component-driven applications with declarative states.</div>
+                                    <div class="skill-badge-explanation">SikAI: Developing component-driven analytics widgets with responsive layouts.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-sikai">
                                     JavaScript
-                                    <div class="skill-badge-explanation">Writing modern ES6+ functional code with robust asynchronous behaviors.</div>
+                                    <div class="skill-badge-explanation">SikAI: Creating data charts, dynamic lines and high-performance states.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-kanunai">
                                     HTML & CSS
-                                    <div class="skill-badge-explanation">Writing structured semantic HTML combined with scalable CSS layout designs.</div>
+                                    <div class="skill-badge-explanation">KanunAI: Architecting a highly readable split-screen layout for RAG analysis.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-saha-yatri">
                                     Responsive Design
-                                    <div class="skill-badge-explanation">Designing interfaces that adapt fluidly to desktop, tablet, and mobile displays.</div>
+                                    <div class="skill-badge-explanation">Saha-Yatri: Constructing displays that load smoothly across all portable platforms.</div>
                                 </div>
-                                <div class="skill-badge">
+                                <div class="skill-badge" data-related-project="project-kanunai">
                                     API Integration
-                                    <div class="skill-badge-explanation">Connecting frontend layouts to RESTful endpoints and backend models.</div>
+                                    <div class="skill-badge-explanation">KanunAI: Interlocking custom conversational endpoints with real-time feedback loops.</div>
                                 </div>
                             </div>
                         </div>
@@ -301,11 +339,11 @@
                         <div class="skill-group-container">
                             <h4>Tools</h4>
                             <div class="skill-badges">
-                                <div class="skill-badge">Figma</div>
-                                <div class="skill-badge">Adobe XD</div>
-                                <div class="skill-badge">Photoshop</div>
-                                <div class="skill-badge">Canva</div>
-                                <div class="skill-badge">Git & GitHub</div>
+                                <div class="skill-badge" data-related-project="project-backdropx">Figma</div>
+                                <div class="skill-badge" data-related-project="project-meeting-room">Adobe XD</div>
+                                <div class="skill-badge" data-related-project="project-backdropx">Photoshop</div>
+                                <div class="skill-badge" data-related-project="project-sikai">Canva</div>
+                                <div class="skill-badge" data-related-project="project-meeting-room">Git & GitHub</div>
                             </div>
                         </div>
                     </div>
@@ -322,12 +360,41 @@
 
                 <div class="about-grid">
                     <div class="about-content-left">
-                        <p class="about-description">
-                            I am Sasa Dhungana, a Computer Engineering graduate from <strong>Kathmandu University</strong> who has actively pivoted into UI/UX Product Design. This combination enables me to look at problems through a unique lens: empathetic user understanding matched with analytical technical execution.
-                        </p>
-                        <p class="about-description">
-                            Over the course of my professional UI/UX experience and frontend initiatives, I have worked across enterprise applications and consumer platforms. I focus heavily on research-driven design systems, ensuring accessibility, clarity, and structural consistency.
-                        </p>
+                        <!-- High Contrast Tabs for Sasa's Background -->
+                        <div class="about-tabs-container">
+                            <button class="about-tab active" data-tab="designer">DESIGNER</button>
+                            <button class="about-tab" data-tab="engineer">ENGINEER</button>
+                            <button class="about-tab" data-tab="problem-solver">PROBLEM SOLVER</button>
+                        </div>
+
+                        <!-- Dynamic Tab Content Panels -->
+                        <div class="about-tab-content active" id="tab-designer">
+                            <p class="about-description">
+                                I focus heavily on <strong>user research, research-driven design systems, accessibility, and high fidelity interactive interfaces</strong>. Having designed real-world professional B2B ecosystems, my approach is centered on mapping logical paths to minimize cognitive friction, while crafting delightful interactions that make products fun to use.
+                            </p>
+                            <p class="about-description">
+                                I synthesize user empathy into concrete interface variables, components, and token patterns to cultivate seamless alignment and reliable handoffs with engineering cohorts.
+                            </p>
+                        </div>
+
+                        <div class="about-tab-content" id="tab-engineer">
+                            <p class="about-description">
+                                Graduating with a <strong>Bachelor of Engineering in Computer Engineering</strong> from Kathmandu University, I possess a deep analytical grasp of software cycles, computational logic, responsive grid structures, and core layout performance.
+                            </p>
+                            <p class="about-description">
+                                This background enables me to write modern clean ES6+ JavaScript, develop component-driven declarative systems, and design interfaces that are technically sound and perfectly optimized.
+                            </p>
+                        </div>
+
+                        <div class="about-tab-content" id="tab-problem-solver">
+                            <p class="about-description">
+                                At the intersection of <strong>Human-Centric Design</strong> and <strong>System Architecture</strong>, I resolve complex friction. Whether designing real-time driver/passenger platforms under rigorous field testing, or custom RAG document-review AI platforms, I focus on resolving functional bottlenecks.
+                            </p>
+                            <p class="about-description">
+                                I love turning intricate raw performance datasets, data analytics, and workflow metrics into elegant, straightforward, and highly digestible interactive experiences.
+                            </p>
+                        </div>
+
                         <div class="about-personal-details">
                             <div class="detail-row">
                                 <span>Alma Mater</span>
@@ -463,6 +530,12 @@
             <!-- Rendered Dynamically via JS -->
         </div>
     </div>
+
+    <!-- Figma/Wireframe Mode Toggle button (Floating Ruler) -->
+    <button class="wireframe-mode-btn" id="wireframe-btn" aria-label="Toggle Figma Design Mode">
+        <i class="fa-solid fa-ruler-combined"></i>
+        <span>Blueprint Mode (Press 'D')</span>
+    </button>
 
     <!-- Accent Color Design-System Tool -->
     <div class="style-switcher" id="style-switcher">
