@@ -1394,6 +1394,69 @@ textarea.form-input {
     color: var(--skin-color);
 }
 
+/* Custom Cursor and Sparkle Trail System */
+@media (min-width: 768px) {
+    body {
+        cursor: none !important;
+    }
+    a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span {
+        cursor: none !important;
+    }
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--skin-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    display: none;
+}
+
+.custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--skin-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+        display: block;
+    }
+}
+
+/* Hover effect state on interactive elements */
+.custom-cursor-ring.hovered {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(236, 24, 57, 0.08); /* Transparent variant of skin */
+    border-color: var(--skin-color);
+}
+
+.custom-cursor-dot.hovered {
+    width: 12px;
+    height: 12px;
+}
+
 /* Premium Sparkle Star Trail Cursor */
 .sparkle-star {
     position: fixed;
@@ -1402,7 +1465,7 @@ textarea.form-input {
     width: auto;
     height: auto;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 9998;
     color: var(--skin-color); /* Dynamically matches active theme accent */
     font-family: Arial, sans-serif;
     line-height: 1;
@@ -1433,7 +1496,12 @@ textarea.form-input {
         transition-duration: 0s !important;
         scroll-behavior: auto !important;
     }
-    .sparkle-star {
+    .sparkle-star,
+    .custom-cursor-dot,
+    .custom-cursor-ring {
         display: none !important;
+    }
+    body, a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span {
+        cursor: auto !important;
     }
 }

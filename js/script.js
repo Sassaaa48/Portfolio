@@ -454,22 +454,67 @@ function setCurrentYear() {
     }
 }
 
-// --- PREMIUM SPARKLE STAR TRAIL CURSOR ---
+// --- PREMIUM CUSTOM CURSOR & SPARKLE TRAIL ---
 function initSparkleCursor() {
     // Disable if user prefers reduced motion or is on mobile touch screen
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) {
         return;
     }
 
+    const dot = document.getElementById('custom-cursor-dot');
+    const ring = document.getElementById('custom-cursor-ring');
     let lastTime = 0;
 
-    window.addEventListener('mousemove', (e) => {
-        const now = Date.now();
-        // Spawning rate limit (every 30ms) to ensure high performance
-        if (now - lastTime < 30) return;
-        lastTime = now;
+    // Track cursor coordinates with high precision
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
 
-        createSparkle(e.clientX, e.clientY);
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Position the dot instantly
+        if (dot) {
+            dot.style.left = `${mouseX}px`;
+            dot.style.top = `${mouseY}px`;
+        }
+
+        // Spawn a trailing sparkle star at a rate limit (every 30ms) to ensure perfect page performance
+        const now = Date.now();
+        if (now - lastTime > 30) {
+            createSparkle(mouseX, mouseY);
+            lastTime = now;
+        }
+    });
+
+    // Smoothly animate the lagging ring cursor using linear interpolation (LERP)
+    function animateRingCursor() {
+        const ease = 0.15; // Speed factor of trailing delay (smooth spring effect)
+        ringX += (mouseX - ringX) * ease;
+        ringY += (mouseY - ringY) * ease;
+
+        if (ring) {
+            ring.style.left = `${ringX}px`;
+            ring.style.top = `${ringY}px`;
+        }
+
+        requestAnimationFrame(animateRingCursor);
+    }
+    requestAnimationFrame(animateRingCursor);
+
+    // Coordinate hover actions across all interactive components
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"], .skill-badge, .project-image-wrapper, .day-night-toggle, .nav-toggle-btn, .canvas-node, .style-switcher span');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if (dot) dot.classList.add('hovered');
+            if (ring) ring.classList.add('hovered');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            if (dot) dot.classList.remove('hovered');
+            if (ring) ring.classList.remove('hovered');
+        });
     });
 }
 
