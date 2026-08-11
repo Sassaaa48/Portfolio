@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagneticFooter();
     initContactForm();
     setCurrentYear();
+    initSparkleCursor();
 });
 
 // --- FIGMA/WIREFRAME BLUEPRINT MODE TOGGLE ---
@@ -868,4 +869,51 @@ function setCurrentYear() {
     if (element) {
         element.textContent = new Date().getFullYear();
     }
+}
+
+// --- PREMIUM SPARKLE STAR TRAIL CURSOR ---
+function initSparkleCursor() {
+    // Disable if user prefers reduced motion or is on mobile touch screen
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768) {
+        return;
+    }
+
+    let lastTime = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        // Spawning rate limit (every 30ms) to ensure high performance
+        if (now - lastTime < 30) return;
+        lastTime = now;
+
+        createSparkle(e.clientX, e.clientY);
+    });
+}
+
+function createSparkle(x, y) {
+    const star = document.createElement('div');
+    star.className = 'sparkle-star';
+    star.innerHTML = '✦'; // Premium 4-pointed sparkle character
+
+    // Generate natural physical drifting properties
+    const scale = 0.5 + Math.random() * 0.8;
+    const rotate = Math.random() * 360;
+    const driftY = -15 - Math.random() * 35; // Floats upward
+    const driftX = (Math.random() - 0.5) * 50;  // Sideways drift
+
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.fontSize = `${10 + Math.random() * 8}px`;
+    star.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${rotate}deg)`;
+
+    // Inject custom animation drifting variables
+    star.style.setProperty('--drift-x', `${driftX}px`);
+    star.style.setProperty('--drift-y', `${driftY}px`);
+
+    document.body.appendChild(star);
+
+    // Garbage collector: clean DOM elements after fade-out transition completes
+    setTimeout(() => {
+        star.remove();
+    }, 800);
 }

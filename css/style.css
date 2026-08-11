@@ -1777,6 +1777,36 @@ body.blueprint-mode .wireframe-mode-btn {
     color: var(--skin-color);
 }
 
+/* Premium Sparkle Star Trail Cursor */
+.sparkle-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 9999;
+    color: var(--skin-color); /* Dynamically matches active theme accent */
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    animation: sparkleFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sparkleFade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+    }
+    20% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, -20px))) scale(0) rotate(220deg);
+    }
+}
+
 /* Accessibility prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -1785,5 +1815,8 @@ body.blueprint-mode .wireframe-mode-btn {
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
         scroll-behavior: auto !important;
+    }
+    .sparkle-star {
+        display: none !important;
     }
 }
