@@ -1697,13 +1697,13 @@ const caseStudiesData = {
                     The case study shows the thinking behind the experience. The complete Figma file contains the detailed screens, components and visual design.
                 </p>
 
-                <div class="sajilo-figma-box" style="border: 1px solid #1b4d3e; background-color: #fbf9f6; color: var(--text-primary);">
+                <div class="sajilo-figma-box">
                     <div class="sajilo-figma-info">
-                        <h4 style="color: #1b4d3e; font-size: 18px; font-weight: 800; margin-bottom: 6px;">Open Figma Canvas Workspace</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Inspect complete page structures, layouts, design patterns, and responsive components.</p>
+                        <h4>Explore the Interactive Prototype</h4>
+                        <p>View the complete mobile user flow and interactive screens directly inside the Figma working file.</p>
                     </div>
-                    <a href="https://www.figma.com/design/EizK7HfmORHRwqebLomoZK/Sajilo-Web?node-id=0-1&t=uyVc7KwHB6rXfUt8-1" target="_blank" class="sajilo-figma-btn" style="background-color: #1b4d3e; color: #ffffff; border-radius: var(--border-radius-sm); font-size: 15px; padding: 14px 28px;">
-                        <i class="fa-brands fa-figma"></i> VIEW SAJILO IN FIGMA ↗
+                    <a href="https://www.figma.com/design/EizK7HfmORHRwqebLomoZK/Sajilo-Web?node-id=0-1&t=uyVc7KwHB6rXfUt8-1" target="_blank" class="sajilo-figma-btn">
+                        <i class="fa-brands fa-figma"></i> Open Figma File
                     </a>
                 </div>
             </section>
@@ -1845,86 +1845,6 @@ const caseStudiesData = {
             }
         ]
     },
-    'backdropx': {
-        title: 'BackdropX',
-        category: 'Mobile Application',
-        meta: 'High-Definition Wallpaper Application',
-        image: 'images/p4.png',
-        brief: 'A visually intensive, image-heavy mobile platform optimized for high-definition wallpapers, tactile micro-interactions, and swift saving workflows.',
-        figmaLink: 'https://www.figma.com/',
-        sections: [
-            {
-                title: '01 — OVERVIEW',
-                html: '<p>BackdropX is a high-end visual product built with sensory layout rules. Focus was dedicated to spatial balance, image proportions, and seamless animations that elevate mobile aesthetic experiences.</p>'
-            },
-            {
-                title: '02 — GRID SYSTEM ARCHITECTURE',
-                html: '<p>To highlight photography and graphics, we engineered a custom staggered-column masonry grid layout. It maintains consistent aspect ratios across varying mobile screen scales, minimizing white-space overhead while preserving artistic assets.</p>'
-            },
-            {
-                title: '03 — MICRO-INTERACTIONS & NAVIGATION',
-                html: '<p>A major emphasis was placed on responsive touch-based physics:</p><ul><li><strong>One-Tap Save:</strong> A responsive floating button that dynamically displays file download progressions through haptic micro-interactions.</li><li><strong>Seamless Category Swipe:</strong> An infinite horizontal scrolling carousel that uses parallax transitions to preview neighboring visual themes.</li></ul>'
-            },
-            {
-                title: '04 — VISUAL SYSTEM BLUEPRINT',
-                html: `<p>Representative mobile grid blueprint utilized to ensure visual breathing room:</p>
-                <div class="case-study-visual">
-                    <span class="visual-title">Staggered Columns Grid Abstract</span>
-                    <div class="visual-wireframe-container">
-                        <div class="wireframe-element-row" style="height: 120px;">
-                            <div class="wireframe-box" style="flex: 1; height: 100px;">Visual Thumbnail (Portait)</div>
-                            <div class="wireframe-box" style="flex: 1; height: 130px;">Visual Thumbnail (Tall)</div>
-                        </div>
-                        <div class="wireframe-element-row">
-                            <div class="wireframe-box">Floating Download (One-Tap Action)</div>
-                        </div>
-                    </div>
-                </div>`
-            },
-            {
-                title: '05 — DASHBOARD & SAVE INTERFACE',
-                html: '<p>The user dashboard is personalized around chosen palettes, featuring visual theme groupings. Micro-interactions utilize hardware-accelerated CSS filters and spring animations, ensuring the app remains extremely fast on all responsive viewport frames.</p>'
-            }
-        ]
-    },
-    'sikai': {
-        title: 'SikAI',
-        category: 'Data Visualization',
-        meta: 'AI-Powered E-Learning Platform',
-        image: 'images/p1.png',
-        brief: 'An e-learning environment built with complex analytical dashboard layouts to present course performance metrics and learner trends simply.',
-        figmaLink: 'https://www.figma.com/',
-        sections: [
-            {
-                title: '01 — OVERVIEW',
-                html: '<p>SikAI bridges data-heavy analytics and educational experiences. The core objective of this design sprint was to turn raw student progress data, submission states, and grading trajectories into interactive visual layouts.</p>'
-            },
-            {
-                title: '02 — DUAL-ROLE DASHBOARD ARCHITECTURE',
-                html: '<p>The product layout changes dynamically based on the active role:</p><ul><li><strong>Teacher Console:</strong> Displays class trends, student risk warnings, and assignment completion heatmaps.</li><li><strong>Student Hub:</strong> Visualizes personalized progress metrics, study pathways, and real-time diagnostic alerts.</li></ul>'
-            },
-            {
-                title: '03 — DATA VISUALIZATION SYSTEMS',
-                html: `<p>To avoid clutter, we curated a minimal system using color codes (alert warnings in warm tones, progress states in neutral skins). Below is an abstract mockup of the data layout:</p>
-                <div class="case-study-visual">
-                    <span class="visual-title">Analytical Dashboard Interface Blueprint</span>
-                    <div class="visual-wireframe-container">
-                        <div class="wireframe-element-row">
-                            <div class="wireframe-box" style="flex: 1;">Completion Progress (Bar Chart)</div>
-                            <div class="wireframe-box" style="flex: 1;">Active Engagement (Line Graph)</div>
-                        </div>
-                        <div class="wireframe-element-row">
-                            <div class="wireframe-box" style="flex: 2;">Live Performance Heatmap (Student Log vs. Days)</div>
-                        </div>
-                    </div>
-                </div>`
-            },
-            {
-                title: '04 — INTERACTIVE DIAGNOSTICS & ALERTS',
-                html: '<p>Real-time notifications inform educators of learning drops. Usability assessments demonstrated that introducing visual diagnostic cards rather than listing alerts in text format accelerated teacher responses by 40%.</p>'
-            }
-        ]
-    }
 };
 
 // --- CORE APPLICATION INITIALIZATION ---
@@ -2528,9 +2448,39 @@ window.openCaseStudy = function(projectId) {
 
     let fullHtml = '';
 
+    let skipBtnHtml = `
+        <div class="skip-figma-container">
+            <button class="skip-figma-btn" onclick="skipToFigma()">
+                <i class="fa-brands fa-figma"></i> Figma File <i class="fa-solid fa-arrow-down"></i>
+            </button>
+        </div>
+    `;
+
     if (project.customLayout) {
         modal.classList.add('sajilo-modal-mode');
-        fullHtml = project.html;
+        // We will insert the figma button near the title
+        let modifiedHtml = project.html;
+
+        // Let's replace the first occurance of the title class with a container that holds the title and figma button side-by-side
+        if (projectId === 'sajilo') {
+            modifiedHtml = modifiedHtml.replace(
+                `<h1 class="sajilo-section-title" style="font-size: clamp(40px, 8vw, 80px); margin-bottom: 8px;">SAJILO</h1>`,
+                `<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 8px;">
+                    <h1 class="sajilo-section-title" style="font-size: clamp(40px, 8vw, 80px); margin: 0;">SAJILO</h1>
+                    ${skipBtnHtml}
+                </div>`
+            );
+        } else if (projectId === 'saha-yatri') {
+            modifiedHtml = modifiedHtml.replace(
+                `<h1 class="sajilo-section-title" style="font-size: clamp(40px, 8vw, 80px); margin-bottom: 8px;">Sajilo</h1>`,
+                `<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 8px;">
+                    <h1 class="sajilo-section-title" style="font-size: clamp(40px, 8vw, 80px); margin: 0;">Sajilo</h1>
+                    ${skipBtnHtml}
+                </div>`
+            );
+        }
+
+        fullHtml = modifiedHtml;
     } else {
         modal.classList.remove('sajilo-modal-mode');
         // Assemble Beautiful Case Study Template
@@ -2547,7 +2497,10 @@ window.openCaseStudy = function(projectId) {
         fullHtml = `
             <div class="case-study-header">
                 <span class="case-study-category">${project.category}</span>
-                <h2 class="case-study-title">${project.title}</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+                    <h2 class="case-study-title" style="margin: 0;">${project.title}</h2>
+                    ${skipBtnHtml}
+                </div>
                 <p class="case-study-brief">${project.brief}</p>
 
                 <div class="case-study-info-grid">
@@ -2573,10 +2526,10 @@ window.openCaseStudy = function(projectId) {
             ${sectionsHtml}
 
             <!-- Figma Link Integration Box -->
-            <div class="sajilo-figma-box" style="border: 1px solid var(--border-color); background-color: var(--bg-surface); color: var(--text-primary); margin-top: 60px;">
+            <div class="sajilo-figma-box">
                 <div class="sajilo-figma-info">
-                    <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 6px;">Open Figma Canvas Workspace</h4>
-                    <p style="color: var(--text-secondary); font-size: 14px;">Inspect complete page structures, layouts, design patterns, and responsive components.</p>
+                    <h4>Explore the Interactive Prototype</h4>
+                    <p>View the complete mobile user flow and interactive screens directly inside the Figma working file.</p>
                 </div>
                 <a href="${project.figmaLink || 'https://www.figma.com/'}" target="_blank" class="sajilo-figma-btn">
                     <i class="fa-brands fa-figma"></i> Open Figma File
@@ -2589,14 +2542,8 @@ window.openCaseStudy = function(projectId) {
         `;
     }
 
-    // Render & Open with transitions with prepend Skip to Figma button
-    contentArea.innerHTML = `
-        <div class="skip-figma-container">
-            <button class="skip-figma-btn" onclick="skipToFigma()">
-                <i class="fa-brands fa-figma"></i> Skip to Figma Link <i class="fa-solid fa-arrow-down"></i>
-            </button>
-        </div>
-    ` + fullHtml;
+    // Render & Open with transitions
+    contentArea.innerHTML = fullHtml;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
