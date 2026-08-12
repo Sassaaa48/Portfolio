@@ -1784,11 +1784,11 @@ const caseStudiesData = {
                 <div class="sajilo-section-title-wrapper">
                     <span class="sajilo-section-tag">NEXT PROJECT</span>
                 </div>
-                <a href="javascript:void(0)" onclick="openCaseStudy('kanunai')" class="sajilo-next-project-banner">
+                <a href="javascript:void(0)" onclick="openCaseStudy('paila')" class="sajilo-next-project-banner">
                     <div>
                         <div class="sajilo-next-label">NEXT PROJECT &rarr;</div>
-                        <div class="sajilo-next-title">KanunAI Platform</div>
-                        <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">AI Legal Research and Retrieval Platform</p>
+                        <div class="sajilo-next-title">Paila Travel App</div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0 0;">Nepal-focused Travel Planning App</p>
                     </div>
                     <div class="sajilo-next-arrow">&rarr;</div>
                 </a>
@@ -1796,42 +1796,52 @@ const caseStudiesData = {
         </div>
         `
     },
-    'kanunai': {
-        title: 'KanunAI',
-        category: 'AI Platform Design',
-        meta: 'AI Legal Research Platform',
-        image: 'images/p6.png',
-        brief: 'An advanced search and review interface utilizing a custom Retrieval-Augmented Generation (RAG) model trained on complex Nepali statutory laws.',
-        figmaLink: 'https://www.figma.com/',
+    'paila': {
+        title: 'Paila — travel planning app',
+        category: 'Travel App Design',
+        meta: 'Personal project',
+        image: 'images/paila-hero.png',
+        brief: 'Paila is a Nepal-focused travel planning app designed to make discovering and organizing trips feel simpler and more personal.',
+        figmaLink: 'https://www.figma.com/design/svUe1yqe7m7uZ2z3xfSfhz/Paila-App?node-id=0-1&t=uyVc7KwHB6rXfUt8-1',
         sections: [
             {
                 title: '01 — OVERVIEW',
-                html: '<p>KanunAI is a professional legal research platform designed to bring machine intelligence to statutory analysis. It allows legal practitioners to query dense legislation, access verified citations, and view context-specific summaries.</p>'
+                html: '<p>Paila is a Nepal-focused travel planning app designed to make discovering and organizing trips feel simpler and more personal.</p><p>The concept brings destination discovery, saved places, itinerary planning, budgeting, collaboration, and travel-day information into one cohesive experience.</p><p><strong>My role:</strong> UI/UX Designer<br><strong>Tool:</strong> Figma<br><strong>Platform:</strong> Mobile<br><strong>Type:</strong> Personal project</p>'
             },
             {
-                title: '02 — THE CHALLENGE',
-                html: '<p>AI search models can often generate inaccurate references, which can damage a legal case. The product design challenges included:</p><ul><li>Establishing absolute trust and reference verification.</li><li>Designing complex RAG document review workflows.</li><li>Creating clean interaction models to refine AI queries step-by-step.</li></ul>'
+                title: '02 — THE PROBLEM',
+                html: '<p>Planning a trip can mean jumping between different platforms to discover destinations, decide what to do, organize an itinerary, and keep track of the trip.</p><p>I wanted to explore: <em>How might we make planning a trip around Nepal feel less overwhelming and more personal?</em></p>'
             },
             {
-                title: '03 — BLUEPRINTING NAVIGATION & INTERACTION',
-                html: '<p>We formulated a split-screen workspace layout that displays the AI chat console alongside the original referenced statutory text. This ensures lawyers can instantly cross-reference quotes with legal codes without flipping screens.</p>'
+                title: '03 — RESEARCH & INSPIRATION',
+                html: '<p>I conducted competitor/interface research to understand how existing digital products approach discovery, search, saved content, navigation, and structured information.</p><p>I also looked at travel-planning patterns to identify opportunities for a more personalized Nepal-focused experience.</p><p>One of the main ideas I explored was: Instead of simply asking <strong>"Where do you want to go?"</strong> &rarr; ask <strong>"What kind of trip do you want?"</strong> This led to Paila\'s mood-based planning concept.</p>'
             },
             {
-                title: '04 — USER INTERFACE WORKFLOW',
-                html: `<p>Below is an architectural diagram of our split-screen RAG workspace model:</p>
+                title: '04 — THE SOLUTION',
+                html: `<p>Paila guides users through a simple journey: <strong>Explore &rarr; Save &rarr; Plan &rarr; Personalize &rarr; Travel</strong></p><p>Users can:</p><ul><li>Explore destinations across Nepal</li><li>Save places they're interested in</li><li>Plan a trip based on duration and companions</li><li>Choose their travel mood/preferences</li><li>View a day-by-day itinerary</li><li>Collaborate with travel companions</li><li>Track a trip budget</li><li>Use a map to discover places</li><li>Access local travel tips and phrases</li></ul><p>The key idea is that the same destination can become a very different trip depending on the person travelling.</p>
                 <div class="case-study-visual">
-                    <span class="visual-title">Split-Screen Legal Workspace Abstract</span>
+                    <span class="visual-title">The Paila Journey</span>
                     <div class="visual-wireframe-container">
-                        <div class="wireframe-element-row" style="height: 140px;">
-                            <div class="wireframe-box" style="flex: 1;">AI Conversational Panel & Prompt Logs</div>
-                            <div class="wireframe-box" style="flex: 1.2;">Interactive statutory document viewer (with automatic highlight markers)</div>
+                        <div class="wireframe-element-row" style="height: 60px;">
+                            <div class="wireframe-box" style="flex: 1;">Explore Nepal</div>
+                            <div class="wireframe-box" style="flex: 1;">Save Places</div>
+                            <div class="wireframe-box" style="flex: 1;">Plan & Mood Selection</div>
+                            <div class="wireframe-box" style="flex: 1;">Itinerary & Travel</div>
                         </div>
                     </div>
                 </div>`
             },
             {
-                title: '05 — DESIGN FOR ERROR DIAGNOSTICS',
-                html: '<p>Recognizing the risks of AI hallucination, we designed specific error diagnostics and confidence-level meters for every query response. Users can hover over citation links to view source integrity states, facilitating rapid and trustworthy review cycles.</p>'
+                title: '05 — KEY DESIGN DECISIONS',
+                html: '<p><strong>Mood-based planning</strong><br>Rather than making users understand complicated travel categories, Paila asks what kind of experience they want: <em>Relaxed · Adventure · Culture · Nature · Food</em>. This makes personalization feel more natural.</p><p><strong>Timeline-based itinerary</strong><br>The daily itinerary uses a timeline so users can quickly understand what happens next, when it happens, and where they need to go.</p><p><strong>Discovery &rarr; Planning separation</strong><br><em>Explore</em> is for discovering possibilities, while <em>Trips</em> is for managing something you\'ve already decided to do. This keeps the interface from becoming overwhelming.</p><p><strong>Practical travel support</strong><br>Paila also includes things that become useful once the trip actually starts, such as: <em>Local phrases · Safety · Travel etiquette · Budget · Travel-day view</em></p>'
+            },
+            {
+                title: '06 — FINAL DESIGN',
+                html: '<p>The final prototype brings these pieces together into one travel journey:</p><p style="text-align: center; font-weight: bold; margin: 16px 0;">Discover Nepal &darr;<br>Save places &darr;<br>Plan your trip &darr;<br>Choose your mood &darr;<br>Build your itinerary &darr;<br>Travel</p><p>The visual direction uses warm beige and brown tones to create a calm, grounded feeling inspired by travel and Nepal\'s natural and cultural character.</p>'
+            },
+            {
+                title: '07 — REFLECTION',
+                html: '<p>Paila helped me explore how a travel product can go beyond simply showing destinations. The biggest thing I learned was that good travel planning is not only about giving users more options — it\'s about helping them make decisions without feeling overwhelmed.</p><p>If I continued the project, my next step would be to test the planning flow with real travelers and see whether the mood-based personalization actually helps them create trips they prefer.</p>'
             }
         ]
     },
