@@ -485,12 +485,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title-large {
-    font-size: clamp(40px, 6vw, 76px);
+    font-size: clamp(36px, 5.5vw, 68px);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
     text-transform: uppercase;
+}
+
+.hero-title-large .hero-name {
+    font-size: 1em;
 }
 
 .hero-title-large .italic-font {
@@ -498,11 +502,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     text-transform: capitalize;
     font-style: italic;
-    color: var(--text-secondary);
+    color: var(--skin-color);
 }
 
 .hero-title-large .hero-subtitle {
-    font-size: clamp(28px, 4.2vw, 52px);
+    font-size: clamp(20px, 3.2vw, 42px);
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .hero-statement {
@@ -2638,9 +2644,8 @@ body.blueprint-mode .wireframe-mode-btn {
 /* Skip to Figma Link styles */
 .skip-figma-container {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 24px;
-    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .skip-figma-btn {
@@ -2650,9 +2655,9 @@ body.blueprint-mode .wireframe-mode-btn {
     background-color: var(--bg-surface-elevated);
     border: 1px solid var(--border-color-hover);
     color: var(--text-primary);
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
