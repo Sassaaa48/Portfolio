@@ -162,7 +162,7 @@ const caseStudiesData = {
                     <h3 class="sajilo-section-title">Looking at what already exists.</h3>
                 </div>
                 <p class="sajilo-editorial-paragraph">
-                    I reviewed existing e-commerce platforms to understand common patterns around product discovery, navigation, product information, checkout and local shopping experiences.
+                    I reviewed existing e-commerce platforms to understand common patterns around product discovery, navigation, product information, checkout, and local shopping experiences.
                 </p>
                 <p class="sajilo-editorial-paragraph" style="font-weight: 600; color: var(--text-primary);">The competitors considered were:</p>
 
@@ -188,7 +188,7 @@ const caseStudiesData = {
                     <div class="sajilo-diagram-body-abstract">
                         <i class="fa-solid fa-table-list sajilo-diagram-icon"></i>
                         <p class="sajilo-diagram-text">
-                            <strong>Feature Evaluation Matrix:</strong> Maps Daraz, Jeevee, and Amazon across dimensions like: product discovery, navigation, specifications clarity, checkout speed, local payment native options, and local product visibility.
+                            <strong>Feature Evaluation Matrix:</strong> Maps Daraz, Jeevee, and Amazon across dimensions like product discovery, navigation, specification clarity, checkout speed, local payment options, and local product visibility.
                         </p>
                     </div>
                 </div>
@@ -1805,20 +1805,20 @@ const caseStudiesData = {
         figmaLink: 'https://www.figma.com/design/svUe1yqe7m7uZ2z3xfSfhz/Paila-App?node-id=0-1&t=uyVc7KwHB6rXfUt8-1',
         sections: [
             {
-                title: '01 — OVERVIEW',
-                html: '<p>Paila is a Nepal-focused travel planning app designed to make discovering and organizing trips feel simpler and more personal.</p><p>The concept brings destination discovery, saved places, itinerary planning, budgeting, collaboration, and travel-day information into one cohesive experience.</p><p><strong>My role:</strong> UI/UX Designer<br><strong>Tool:</strong> Figma<br><strong>Platform:</strong> Mobile<br><strong>Type:</strong> Personal project</p>'
+                title: '01 — OVERVIEW & ROLE',
+                html: '<p><strong>What is Paila?</strong> Paila is a conceptual mobile e-commerce and utility travel application designed specifically for navigating and planning travel in Nepal. It brings destination discovery, saved places, itinerary planning, budgeting, collaboration, and on-trip travel-day assistance into one cohesive space.</p><p><strong>My Role:</strong> As the sole UI/UX Designer, I handled the entire end-to-end design process, from identifying the core problem and analyzing current travel tools to structuring the app architecture, designing user flows, wireframing layouts, defining visual guidelines, and creating the final high-fidelity Figma prototype.</p>'
             },
             {
-                title: '02 — THE PROBLEM',
-                html: '<p>Planning a trip can mean jumping between different platforms to discover destinations, decide what to do, organize an itinerary, and keep track of the trip.</p><p>I wanted to explore: <em>How might we make planning a trip around Nepal feel less overwhelming and more personal?</em></p>'
+                title: '02 — THE PROBLEM & TARGET USERS',
+                html: '<p><strong>The Problem:</strong> Planning a trip typically forces travelers to jump between multiple disjointed platforms: search engines for destination discovery, social media for suggestions, mapping services for location pins, notepad apps for itineraries, and chat groups for coordinating with friends. This fragmented workflow often makes trip planning feel overwhelming, disjointed, and stressful.</p><p><strong>Target Users:</strong> The primary users are local and international travelers in Nepal who value organized, smooth, and personalized travel plans. They want to plan trips with ease, coordinate with travel companions, track trip expenses, and access helpful on-the-road assistance without carrying physical files or switching between multiple apps.</p>'
             },
             {
-                title: '03 — RESEARCH & INSPIRATION',
-                html: '<p>I conducted competitor/interface research to understand how existing digital products approach discovery, search, saved content, navigation, and structured information.</p><p>I also looked at travel-planning patterns to identify opportunities for a more personalized Nepal-focused experience.</p><p>One of the main ideas I explored was: Instead of simply asking <strong>"Where do you want to go?"</strong> &rarr; ask <strong>"What kind of trip do you want?"</strong> This led to Paila\'s mood-based planning concept.</p>'
+                title: '03 — RESEARCH & DISCOVERY',
+                html: '<p>I conducted competitor and design interface research to analyze how existing digital travel planning platforms approach content discovery, visual hierarchy, navigation models, and saved features.</p><p>A critical insight emerged during the research phase: Most travel platforms ask users <em>"Where do you want to go?"</em> rather than <em>"What kind of travel experience do you prefer?"</em>. This led to Paila’s core differentiator: a <strong>mood-based planning system</strong> that shifts the focus from simple destination listings to personalized experiences.</p>'
             },
             {
-                title: '04 — THE SOLUTION',
-                html: `<p>Paila guides users through a simple journey: <strong>Explore &rarr; Save &rarr; Plan &rarr; Personalize &rarr; Travel</strong></p><p>Users can:</p><ul><li>Explore destinations across Nepal</li><li>Save places they're interested in</li><li>Plan a trip based on duration and companions</li><li>Choose their travel mood/preferences</li><li>View a day-by-day itinerary</li><li>Collaborate with travel companions</li><li>Track a trip budget</li><li>Use a map to discover places</li><li>Access local travel tips and phrases</li></ul><p>The key idea is that the same destination can become a very different trip depending on the person travelling.</p>
+                title: '04 — DESIGN PROCESS & USER FLOW',
+                html: `<p>I mapped out a natural 5-step user journey: <strong>Explore &rarr; Save &rarr; Plan &rarr; Personalize &rarr; Travel</strong>. This flow helps transition users from passive browsing to active trip management without introducing cognitive clutter.</p>
                 <div class="case-study-visual">
                     <span class="visual-title">The Paila Journey</span>
                     <div class="visual-wireframe-container">
@@ -1833,15 +1833,15 @@ const caseStudiesData = {
             },
             {
                 title: '05 — KEY DESIGN DECISIONS',
-                html: '<p><strong>Mood-based planning</strong><br>Rather than making users understand complicated travel categories, Paila asks what kind of experience they want: <em>Relaxed · Adventure · Culture · Nature · Food</em>. This makes personalization feel more natural.</p><p><strong>Timeline-based itinerary</strong><br>The daily itinerary uses a timeline so users can quickly understand what happens next, when it happens, and where they need to go.</p><p><strong>Discovery &rarr; Planning separation</strong><br><em>Explore</em> is for discovering possibilities, while <em>Trips</em> is for managing something you\'ve already decided to do. This keeps the interface from becoming overwhelming.</p><p><strong>Practical travel support</strong><br>Paila also includes things that become useful once the trip actually starts, such as: <em>Local phrases · Safety · Travel etiquette · Budget · Travel-day view</em></p>'
+                html: '<p><strong>1. Mood-Based Planning Over Complex Categories</strong><br>Instead of forcing users to navigate through extensive nested travel categories, I designed a simple mood selector: <em>Relaxed, Adventure, Culture, Nature, Food</em>. This lets users personalize their entire trip recommendations in a single step.</p><p><strong>2. Timeline-Based Daily Itinerary</strong><br>I grouped itinerary activities into a vertical chronological timeline. Rather than requiring users to open separate tabs or maps, they can see what happens next, when it happens, and where it is located relative to other plans directly in their feed.</p><p><strong>3. Clear Separation of Discovery and Active Planning</strong><br>I kept the <em>Explore</em> feed (for passive discovery) separate from the active <em>Trips</em> panel (for managing current itineraries). This keeps the main dashboard highly focused and uncluttered.</p><p><strong>4. Built-in Practical Travel Tools</strong><br>I added useful features designed specifically for travel days, such as local phrases, cultural etiquette, safety checklists, and shared budget sheets so that the app remains valuable throughout the entire trip duration.</p>'
             },
             {
-                title: '06 — FINAL DESIGN',
-                html: '<p>The final prototype brings these pieces together into one travel journey:</p><p style="text-align: center; font-weight: bold; margin: 16px 0;">Discover Nepal &darr;<br>Save places &darr;<br>Plan your trip &darr;<br>Choose your mood &darr;<br>Build your itinerary &darr;<br>Travel</p><p>The visual direction uses warm beige and brown tones to create a calm, grounded feeling inspired by travel and Nepal\'s natural and cultural character.</p>'
+                title: '06 — THE FINAL UI & VISUAL LANGUAGE',
+                html: '<p>The visual direction uses warm editorial beige and brown tones, inspired by Nepal\'s natural landscapes and cultural heritage, to create a calm, organic, and grounded feeling.</p><p style="text-align: center; font-weight: bold; margin: 24px 0;">Explore &rarr; Save &rarr; Plan &rarr; Personalize &rarr; Travel</p><p>By prioritizing visual hierarchy, generous line heights, and clean typography, the layout ensures that scanning complex schedules is comfortable for the eyes, even when on a bumpy bus ride.</p>'
             },
             {
-                title: '07 — REFLECTION',
-                html: '<p>Paila helped me explore how a travel product can go beyond simply showing destinations. The biggest thing I learned was that good travel planning is not only about giving users more options — it\'s about helping them make decisions without feeling overwhelmed.</p><p>If I continued the project, my next step would be to test the planning flow with real travelers and see whether the mood-based personalization actually helps them create trips they prefer.</p>'
+                title: '07 — REFLECTION & LEARNINGS',
+                html: '<p>Designing Paila taught me that effective product design is not about giving users the maximum number of choices. Instead, it is about organizing complex information so users can make decisions naturally without feeling overwhelmed.</p><p>If I were to take this project further, my next step would be to conduct usability tests with real travelers using the interactive prototype, measuring how quickly they can coordinate a shared group budget and adjust their timeline on-the-go.</p>'
             }
         ]
     },
@@ -1906,7 +1906,7 @@ function initHeroTypewriter() {
     if (!nameEl || !titleEl) return;
 
     const nameText = "Sasa Dhungana";
-    const titleText = "UI/UX Designer";
+    const titleText = "UI/UX & Product Designer";
 
     // Clear content initially to start typewriter effect
     nameEl.textContent = "";
