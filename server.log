@@ -1,0 +1,13 @@
+127.0.0.1 - - [13/Aug/2026 05:11:19] "HEAD / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/skins/color-1.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/skins/color-2.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/skins/color-3.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/skins/color-4.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /css/skins/color-5.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /images/sajilo-hero.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /images/sajilo-web-collage.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /images/paila-hero.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /js/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Aug/2026 05:12:16] "GET /js/style-switcher.js HTTP/1.1" 200 -
