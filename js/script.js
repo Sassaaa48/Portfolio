@@ -1860,7 +1860,94 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagneticFooter();
     initContactForm();
     setCurrentYear();
+    initHeroTypewriter();
+    initScrollReveal();
 });
+
+// --- SCROLL-REVEAL POP-UP ANIMATIONS ---
+function initScrollReveal() {
+    // Select elements to reveal
+    // Cards, text lines, sections, and container blocks
+    const revealTargets = document.querySelectorAll(
+        '.project-card, .skill-group-container, .about-content-left, .about-content-right, .contact-links, .form-container, .section-tag, .section-title, .section-subtitle, .hero-statement, .hero-desc, .btn-group'
+    );
+
+    // Initial state: add class '.scroll-reveal'
+    revealTargets.forEach(el => {
+        el.classList.add('scroll-reveal');
+    });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -8% 0px', // Trigger slightly before element is fully in view
+        threshold: 0.05
+    };
+
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-revealed');
+                observer.unobserve(entry.target); // Reveal only once
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(revealCallback, observerOptions);
+    revealTargets.forEach(target => observer.observe(target));
+}
+
+// --- TYPEWRITER ANIMATION FOR HERO TITLE ---
+function initHeroTypewriter() {
+    const nameEl = document.getElementById('typewriter-name');
+    const titleEl = document.getElementById('typewriter-title');
+    const nameCursor = document.getElementById('name-cursor');
+    const titleCursor = document.getElementById('title-cursor');
+
+    if (!nameEl || !titleEl) return;
+
+    const nameText = "Sasa Dhungana";
+    const titleText = "UI/UX Designer";
+
+    // Clear content initially to start typewriter effect
+    nameEl.textContent = "";
+    titleEl.textContent = "";
+
+    let nameIdx = 0;
+    let titleIdx = 0;
+
+    function typeName() {
+        if (nameIdx < nameText.length) {
+            nameEl.textContent += nameText.charAt(nameIdx);
+            nameIdx++;
+            setTimeout(typeName, 100 + Math.random() * 50); // Natural pacing variation
+        } else {
+            // Once name is typed, wait a short moment, switch cursor focus, and type title
+            setTimeout(() => {
+                if (nameCursor) nameCursor.style.display = 'none';
+                if (titleCursor) titleCursor.style.display = 'inline';
+                typeTitle();
+            }, 400);
+        }
+    }
+
+    function typeTitle() {
+        if (titleIdx < titleText.length) {
+            titleEl.textContent += titleText.charAt(titleIdx);
+            titleIdx++;
+            setTimeout(typeTitle, 80 + Math.random() * 40);
+        } else {
+            // After everything is finished typing, keep cursor blinking for a bit or make it fade out
+            setTimeout(() => {
+                if (titleCursor) {
+                    titleCursor.classList.add('cursor-fade');
+                }
+            }, 1500);
+        }
+    }
+
+    // Start typing after a short delay
+    setTimeout(typeName, 500);
+}
 
 // --- FIGMA/WIREFRAME BLUEPRINT MODE TOGGLE ---
 function initBlueprintMode() {

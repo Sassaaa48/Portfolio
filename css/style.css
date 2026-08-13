@@ -2636,6 +2636,58 @@ body.blueprint-mode .wireframe-mode-btn {
     transform: scale(1.35) rotate(15deg) translateY(-10px);
 }
 
+/* Typing Animation Cursor */
+.typing-cursor {
+    display: inline-block;
+    color: var(--skin-color);
+    font-weight: 300;
+    margin-left: 2px;
+    animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
+.typing-cursor.cursor-fade {
+    animation: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+@keyframes blinkCursor {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Scroll Reveal Pop-Up Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.scroll-revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger transition delays slightly for consecutive sibling columns or items */
+.project-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+.project-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.skill-group-container:nth-child(1) {
+    transition-delay: 0.05s;
+}
+.skill-group-container:nth-child(2) {
+    transition-delay: 0.1s;
+}
+.skill-group-container:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
 /* Utilities */
 .text-accent {
     color: var(--skin-color);
