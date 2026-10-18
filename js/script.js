@@ -26,7 +26,7 @@ const caseStudiesData = {
                 <div class="sajilo-meta-grid">
                     <div class="sajilo-meta-item">
                         <h4>Role</h4>
-                        <p>Product Designer</p>
+                        <p>UI/UX Designer</p>
                     </div>
                     <div class="sajilo-meta-item">
                         <h4>Type</h4>
@@ -2593,7 +2593,7 @@ window.openCaseStudy = function(projectId) {
                 <div class="case-study-info-grid">
                     <div class="case-study-info-item">
                         <h4>My Role</h4>
-                        <p>Product & UI/UX Designer</p>
+                        <p>UI/UX Designer</p>
                     </div>
                     <div class="case-study-info-item">
                         <h4>Enterprise / Platform</h4>

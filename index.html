@@ -15,7 +15,11 @@
     <meta property="og:image" content="images/preview.png">
 
     <!-- CSS Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Skin stylesheets (Theme accent color) -->
@@ -90,7 +94,7 @@
                             I design user-centered digital products and experiences, from user flows and wireframes to prototypes and high-fidelity interfaces. My Computer Engineering background helps me understand the technical side of products and collaborate effectively with developers.
                         </p>
                         <p class="hero-desc" style="margin-top: 16px;">
-                            Hover or interact with keywords below:<br>
+                            
                             <span class="interactive-keyword" data-keyword="design">DESIGN</span> /
                             <span class="interactive-keyword" data-keyword="code">CODE</span> /
                             <span class="interactive-keyword" data-keyword="product">PRODUCT</span>
@@ -164,7 +168,6 @@
             <div class="container">
                 <span class="section-tag">Case Studies</span>
                 <h2 class="section-title">Selected Work</h2>
-                <p class="section-subtitle">A collection of digital products and case studies where user needs, intuitive interfaces, and practical implementation meet.</p>
 
                 <div class="portfolio-grid">
 
@@ -317,6 +320,8 @@
                             <div class="skill-badges">
                                 <div class="skill-badge" data-related-project="project-sajilo">Figma</div>
                                 <div class="skill-badge" data-related-project="project-paila">FigJam</div>
+                                <div class="skill-badge">Webflow</div>
+                                <div class="skill-badge">Framer</div>
                             </div>
                         </div>
                     </div>
@@ -329,7 +334,6 @@
             <div class="container">
                 <span class="section-tag">My Story</span>
                 <h2 class="section-title">About Sasa</h2>
-                <p class="section-subtitle">Designing digital products that are useful, intuitive, and technically practical.</p>
 
                 <div class="about-grid">
                     <div class="about-content-left">
@@ -368,7 +372,9 @@
                             </p>
                         </div>
 
-                        <div class="about-personal-details">
+                        <details class="about-details">
+<summary>Details</summary>
+<div class="about-personal-details">
                             <div class="detail-row">
                                 <span>Alma Mater</span>
                                 <span>Kathmandu University</span>
@@ -386,6 +392,7 @@
                                 <span>Kathmandu, Nepal</span>
                             </div>
                         </div>
+</details>
                         <div style="margin-top: 32px;">
                             <a href="https://sasadhungana.com.np/CV/Sasa%20Dhungana%20Resume%20(1).pdf" target="_blank" class="btn btn-primary">Download Resume <i class="fa-solid fa-file-arrow-down"></i></a>
                         </div>
@@ -408,6 +415,15 @@
                                 </p>
                             </div>
 
+                <!-- Timeline Item: Education (added at Sasa's request) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h4 class="timeline-title">Master of Business Administration</h4>
+                        <span class="timeline-date">2026 &ndash; 2028</span>
+                    </div>
+                    <div class="timeline-sub">Pokhara University</div>
+                </div>
                             <!-- Timeline Item 2 -->
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
@@ -466,7 +482,9 @@
                 </div>
 
                 <!-- Sleek Modern Form Container -->
-                <div class="form-container">
+                <details class="form-fold">
+<summary class="btn btn-primary">Send a message <i class="fa-solid fa-paper-plane"></i></summary>
+<div class="form-container">
                     <form class="contact-form" id="contact-form-redesign">
                         <div class="form-grid">
                             <div class="form-group">
@@ -489,6 +507,7 @@
                         <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
+</details>
             </div>
         </section>
 
@@ -538,6 +557,7 @@
     <!-- JS Scripts -->
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script src="js/redesign.js"></script>
 </body>
 
 </html>
